@@ -1,0 +1,970 @@
+/* @override http://localhost:8080/mobilemail/VAADIN/themes/mobilemail/styles.css */
+
+@import "../base/styles.css";
+@import "../mobilemail/smartphone-style.css";
+
+@media (orientation:landscape) {
+    html.ipad.ios7 > body {
+        position: fixed;
+        bottom: 0;
+        width:100%;
+        height: 672px !important;
+    }
+}
+
+@media screen and (min-aspect-ratio: 1/1) { /* landscape styles here */}
+
+@media screen and (max-aspect-ratio: 1/1) { /* portrait styles here */}
+
+.v-touchkit-navbar .v-touchkit-componentgroup-h {
+	white-space: nowrap;
+}
+
+.v-table-body {
+	border: none;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.tablet .mailboxes {
+	border-right: 1px solid rgba(0,0,0,.3);
+}
+
+.tablet .mailboxes .v-touchkit-navview-wrapper,
+.tablet .mailboxes .v-touchkit-navpanel-placeholder {
+	background: #f6f6f7;
+}
+
+.phone .v-touchkit-navview-wrapper .v-table,
+.phone .v-touchkit-navpanel-placeholder {
+	background: #fff;
+}
+
+.mailboxes .v-table .v-touchkit-navbutton {
+	border: none;
+	padding: 0 12px;
+}
+
+.mailboxes .v-table .v-touchkit-navbutton:focus,
+.mailboxes .v-table .v-touchkit-navbutton:active {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d8cb9), to(#3e6fa8));
+	color: #fff;
+	text-shadow: 0 1px 1px #396897;
+}
+
+.mailboxes .v-table-cell-content {
+	padding: 0;
+	vertical-align:middle;
+}
+
+.v-touchkit-navview-toolbar .v-touchkit-navbar-caption {
+	font-size: 13px;
+	}
+
+.v-navbutton::after {
+	top: 0 !important;
+}
+
+.v-table .v-label.new-marker {
+	height: 50px;
+	width: 30px;
+	padding: 0;
+	background: transparent url(graphics/attachment-small.png) no-repeat 50% 100%;
+}
+
+.v-table .v-label.attachment {
+	height: 50px;
+	width: 50px;
+	padding: 0;
+	background: transparent url(graphics/ico/attach.png) no-repeat 50% 100%;
+}
+
+.v-table .v-label.new-attachment {
+	width: 15px;
+	padding: 0;
+	background: transparent url(graphics/attachment-small.png) no-repeat 50% 100%;
+	float: right;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+	.v-table .v-label.new-marker {
+		background-image: url(graphics/blue-ball-2x.png);
+		-webkit-background-size: 14px 13px;
+	}
+}
+
+.message-layout .v-label-undef-w {
+	display: inline-block;
+}
+
+.message-layout .details-link {
+	float: right;
+}
+
+.message-layout .mark-as-unread-button {
+	float: right;
+	position: relative;
+	top: 4px;
+}
+
+.selected-checkbox {
+	margin: 32px 0 0 10px;
+}
+
+.v-table-cell-content {
+	border:0;
+}
+
+.v-table-cell-wrapper {
+	border: none;
+	padding-top: 1px;
+	border-bottom: 1px solid #d8d8d9;
+}
+
+.message-list .v-table-cell-wrapper {
+	height: 90px;
+}
+
+.v-table-focus .v-table-cell-wrapper {
+	margin: 0;
+}
+
+.v-table .v-selected {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d8cb9), to(#3e6fa8));
+	outline: none;
+}
+
+.v-table .v-selected,
+.v-table .v-selected .v-label {
+	text-shadow: 0 1px 1px #396897 !important;
+	color: #fff !important;
+}
+
+.v-table-row,.v-table-row-odd {
+	background: none;
+	cursor: default;
+}
+
+.v-table .v-label {
+	padding: 0 10px 0 4px;
+	line-height: 1.2;
+}
+
+.v-table .message-button > .v-csslayout-margin {
+	padding: 3px 0;
+}
+
+.v-gridlayout .message-button > .v-csslayout-margin {
+	padding: 3px 0;
+}
+
+.v-table .message-button-from {
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 1.2;
+	margin-bottom: 2px;
+	width: 60%;
+}
+
+.v-gridlayout .message-button-from {
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 1.2;
+	margin-bottom: 2px;
+	margin-top: 4px;
+}
+
+.v-table .v-label-light {
+	color: #797b7f;
+	font-size: 13px;
+	line-height: 15px;
+	margin-top: -4px;
+}
+
+.message-button {
+	white-space: normal;
+	position: relative;
+}
+
+.message-button-from,
+.message-button-time {
+	display: inline-block;
+}
+
+.v-table .message-button-time {
+    margin-top: 0px;
+	top: 10px;
+	color: #1b699f;
+	float: right;
+}
+
+.v-gridlayout .message-button-time {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	color: #1b699f;
+}
+
+.from-button {
+	border: 1px solid #87a2bf;
+	border-radius: 10px;
+	background: #dce6ef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dee8f1), to(#cedae5));
+	line-height: 1;
+	padding: 1px 7px;
+	margin-left: 6px;
+	vertical-align: 3px;
+}
+
+.from-button .v-button-caption,
+.from-button .v-nativebutton-caption {
+	color: #222;
+}
+
+.center-from-button {
+	border: 1px solid #87a2bf;
+	border-radius: 10px;
+	background: #dce6ef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dee8f1), to(#cedae5));
+	line-height: 1;
+	padding: 1px 7px;
+	vertical-align: 3px;
+}
+
+.center-from-button .v-button-caption,
+.center-from-button .v-nativebutton-caption {
+	color: #222;
+}
+
+.details-link {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.message-view {
+	background: #fff;
+}
+
+.message-view.no-message {
+	background: transparent;
+}
+
+.no-message .message-layout  {
+	height: 100%;
+	background: transparent;
+	-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,.3);
+}
+
+.no-message .message-layout div {
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+	color: #6a6c6f;
+	text-align: center;
+	position: relative;
+}
+
+.no-message .message-layout .v-label {
+	height: auto;
+	top: 40%;
+}
+
+.message-view .message-layout {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.message-view .message-layout > .v-csslayout-margin {
+	padding: 16px 20px;
+	}
+
+.no-message .message-layout > .v-csslayout-margin {
+	padding: 0;
+	}
+
+.message-view .message-layout hr {
+	height: 1px;
+	overflow: hidden;
+	background: #dcdcdc;
+	border: none;
+	border-bottom: 1px solid #fff;
+	margin: 12px -20px;
+}
+
+.message-layout .light-text,
+.message-layout .light {
+	color: #797b7f;
+}
+
+.message-layout .light b {
+	font-weight: normal;
+}
+
+.message-layout .h2 {
+	color: #222;
+	font-size: 17px;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+
+.message-details {
+	margin: 0 -20px;
+	padding: 0 20px;
+}
+
+.v-touchkit-fullscreen.new-message {
+	background: #fff;
+}
+
+.new-message .v-textfield,
+.new-message .v-textarea {
+	-webkit-appearance: none;
+	border: none;
+	background: transparent;
+	font-size: 15px;
+}
+
+.new-message .v-textarea {
+	border-top: 1px solid #ddd;
+	padding: 10px 12px;
+	line-height: 20px;
+}
+
+.new-message .v-formlayout-row > td {
+	border-color: #ddd;
+}
+
+.login-message .v-textfield,
+.login-message .v-textarea {
+	-webkit-appearance: none;
+	border: none;
+	background: transparent;
+	font-size: 15px;
+}
+
+.login-message .v-textarea {
+	border-top: 1px solid #ddd;
+	padding: 10px 12px;
+	line-height: 20px;
+}
+
+.login-message .v-formlayout-row > td {
+	border-color: #ddd;
+}
+
+.v-touchkit-verticalcomponentgroup .v-button-file {
+    display: block;
+    height: 60px;
+    width: 60px;
+	background: transparent;
+	border: none;
+	-webkit-box-shadow: none;
+	overflow: visible;
+	text-align: center;
+	padding: 0px;
+    margin: 0px;
+}
+
+.v-touchkit-verticalcomponentgroup .v-button-file img {
+      display: block;
+      margin-right: auto;
+      margin-bottom: 5px;
+	  margin-top: 7px;
+}
+
+.v-touchkit-verticalcomponentgroup .v-button-file span {
+      font-size: small;
+      text-shadow: #fafafa 1px 1px 0;
+      color:#222;
+      font-weight: normal;
+      line-height: normal;
+}
+
+.v-touchkit-verticalcomponentgroup .v-button-file .v-button-wrap,
+.v-touchkit-verticalcomponentgroup .v-disabled.v-button .v-button-wrap {
+	border: none;
+	background: transparent;
+	overflow: visible;
+	background: transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0px;
+}
+
+.v-touchkit-verticalcomponentgroup .v-button-file:active .v-button-wrap,
+.v-touchkit-verticalcomponentgroup .v-button-file.v-pressed .v-button-wrap {
+    background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.v-app .v-csslayout.v-csslayout-action-panel {
+	height: 32px;
+}
+
+.v-app .v-button.v-button-on-bar-action-panel .v-icon {
+    margin-top: 10px;
+}
+
+.v-app .v-button.v-button-action-panel {
+    width: 31px;
+	height: 29px;
+	margin: 0px 5px;
+}
+
+.v-app .v-button.v-button-action-panel .v-icon {
+    height: auto;
+	margin-top: 10px;
+}
+
+.v-app .v-button.v-button-action-panel .v-button-wrap{
+    padding: 1px;
+}
+
+.v-app .v-button.v-button-on-bar {
+    width: 31px;
+	height: 29px;
+	margin: 0px 5px;
+}
+
+.v-app .v-button.v-button-on-bar .v-icon {
+    height: auto;
+    margin: 5px;
+}
+
+.v-app .v-button.v-button-on-bar .v-button-wrap{
+    padding: 0px;
+    width: 31px;
+	height: 29px;
+}
+
+.v-app .v-button.v-button-on-vertical-bar {
+    width: 30px;
+	height: 30px;
+	margin: 3px;
+    margin-left: 2px;
+}
+
+.v-app .v-button.v-button-on-vertical-bar .v-icon {
+    height: auto;
+    margin: 3px;
+}
+
+.v-app .v-button.v-button-on-vertical-bar .v-button-wrap{
+    padding: 0px;
+    width: 30px;
+	height: 30px;
+}
+
+/* Simple-link style buttons */
+.v-app .v-button-simple-link,
+.v-app .v-button-simple-link .v-button-wrap,
+.v-app .v-nativebutton-simple-link {
+	display: inline-block;
+	border-radius: 0;
+	background: transparent;
+	-webkit-box-shadow: none;
+	padding: 0;
+	height: auto;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-shadow: none;
+	color: #1b699f;
+	border: none;
+	height: 27px;
+	width: 100%;
+	text-align: left;
+	line-height: 27px;
+}
+
+.v-app .v-button-simple-link:active .v-button-wrap {
+	background: transparent;
+}
+
+.v-app .v-button-simple-link .v-button-caption,
+.v-app .v-nativebutton-simple-link .v-button-caption {
+	text-decoration: none;
+	line-height: 1;
+}
+
+.v-app .v-touchkit-verticalcomponentgroup.v-touchkit-verticalcomponentgroup-roles {
+    width: 250px;
+}
+
+.v-app .v-caption.v-caption-roles {
+	overflow: visible;
+}
+
+.v-app .v-caption.v-caption-roles  .v-captiontext{
+	margin: 0px;
+}
+
+.message-layout .caption-light-text,
+.message-layout .light.caption-light {
+	color: black;
+	height: 44px;
+	line-height: 44px;
+}
+
+.v-label.v-label-caption-light-text.caption-light-text.v-label-undef-w {
+	line-height: 32px;
+	height: 27px;
+}
+
+.v-datefield-caption-light-text .v-textfield.v-datefield-textfield.v-textfield-readonly.v-readonly {
+	line-height: 30px;
+	height: 30px;
+}
+
+.message-layout .light.caption-light b {
+	font-weight: bold;
+}
+
+.message-layout .value-light-text,
+.message-layout .light {
+	color: black;
+	width: 100px;
+	height: 44px;
+	line-height: 44px;
+}
+
+.message-layout .main-light-text,
+.message-layout .light.main-light {
+	text-align: right;
+}
+
+.v-textfield .v-textfield-main-light-text .main-light-text {
+    text-align: right;
+}
+
+.v-app .v-nativebutton.v-nativebutton-task {
+    margin-top: 10px;
+}
+
+.v-app .v-textarea.v-textarea-comments {
+    border: none;
+}
+
+.v-app .v-horizontallayout.v-horizontallayout-field {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.v-app .v-nativebutton.v-nativebutton-field {
+    border: none;
+    background: transparent;
+}
+
+.v-touchkit-verticalcomponentgroup input.v-textfield.v-textfield-search {
+    line-height: 19px;
+	height: 23px;
+}
+
+.v-touchkit-verticalcomponentgroup.v-csslayout-search > div {
+    height: 25px;
+    padding: 0 3px;
+    border-radius: 80px;
+    padding-top: 1px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-search {
+    width: 20px;
+    padding: 1px;
+    margin-left: 0px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-plus {
+    width: 20px;
+    padding: 1px;
+    margin-left: 6px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-option {
+    border-radius: 7px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-red {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#F1E1E0, #D49E9B);
+    border-color: #CF938F;
+	margin-left: 0px;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.v-nativebutton.v-nativebutton-option-red > .v-nativebutton-caption {
+	color: #683F3D;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-green {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#E5EEE3, #ADC9A6);
+    border-color: #A4C39C;
+	margin-left: 0px;
+	font-weight: bold;
+	font-size:18px;
+}
+
+.v-nativebutton.v-nativebutton-option-green > .v-nativebutton-caption {
+	color: #3E6035;
+}
+
+.v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-blue {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#E3E8EE, #A6B6C9);
+    border-color: #9CAEC3;
+	margin-left: 0px;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.v-nativebutton.v-nativebutton-option-blue > .v-nativebutton-caption {
+	color: #162F4C;
+}
+
+.v-csslayout.v-csslayout-option-selected {
+    background: -webkit-linear-gradient(rgb(243, 242, 242), rgb(228, 228, 228));
+    border-bottom: 1px solid rgb(187, 187, 187);
+    overflow: hidden;
+}
+
+.v-csslayout.v-csslayout-test-option-selected {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(210, 212, 214)), to(rgb(201, 204, 207)));
+    border: 1px solid rgb(187, 187, 187);
+    padding-bottom: 5px;
+}
+
+.v-csslayout.v-csslayout-action-layout.action-layout {
+	float: left;
+}
+
+.message-layout-ex .v-label-undef-w {
+	display: inline-block;
+}
+
+.message-layout-ex .details-link {
+	float: right;
+}
+
+.message-layout-ex .version {
+    float: right;
+	top: 25px;
+}
+
+.message-layout-ex .mark-as-unread-button {
+	float: right;
+	position: relative;
+	top: 4px;
+}
+
+.no-message .message-layout-ex  {
+	height: 100%;
+	background: transparent;
+	-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,.3);
+}
+
+.no-message .message-layout-ex div {
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+	color: #6a6c6f;
+	text-align: center;
+	position: relative;
+}
+
+.no-message .message-layout-ex .v-label {
+	height: auto;
+	top: 40%;
+}
+
+.message-view .message-layout-ex {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.message-view .message-layout-ex > .v-csslayout-margin {
+/*	padding: 16px 20px; */
+	}
+
+.no-message .message-layout-ex > .v-csslayout-margin {
+	padding: 0;
+	}
+
+.message-view .message-layout-ex hr {
+	height: 1px;
+	overflow: hidden;
+	background: #dcdcdc;
+	border: none;
+	border-bottom: 1px solid #fff;
+	margin: 12px -20px;
+}
+
+.message-layout-ex .light-text,
+.message-layout-ex .light {
+	color: #797b7f;
+}
+
+.message-layout-ex .light b {
+	font-weight: normal;
+}
+
+.message-layout-ex .h2 {
+	color: #222;
+	font-size: 17px;
+	font-weight: bold;
+	padding-bottom: 2px;
+}
+
+.v-button-link.v-button-login .v-button-caption,
+.v-nativebutton-link.v-nativebutton-login .v-button-caption {
+	line-height: 1.5;
+	color: #4e64a1;
+    text-decoration: underline;
+}
+
+.v-app .v-csslayout.v-csslayout-navigate-panel{
+    margin: 0px 5px;
+    width: 91px;
+}
+
+.v-csslayout-attachment > .v-csslayout-margin {
+	border: 1px solid #bbb;
+    border-radius: 10px;
+    background: white;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    overflow: hidden;
+}
+
+.v-touchkit-verticalcomponentgroup .v-touchkit-verticalcomponentgroup-attachment > .v-csslayout-margin {
+    padding: 0;
+}
+
+.v-touchkit-verticalcomponentgroup .v-csslayout-version-attachment > .v-csslayout-margin {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    margin-right: -10px;
+    border-right: none;
+    margin-top: 0px;
+}
+
+.v-csslayout .v-button.v-button-calendar {
+	-webkit-box-shadow: none;
+    background: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+    background: transparent url(graphics/ico/calendarIcon.png) no-repeat 0 50%;
+    -webkit-background-size: 20px 20px;
+}
+
+.v-csslayout .v-button.v-button-calendar .v-button-wrap,
+.v-csslayout .v-button-calendar.v-disabled.v-button .v-button-wrap {
+    -webkit-box-shadow: none;
+    background: none;
+    border-radius: 0px;
+    padding: 0px;
+    height: 20px;
+}
+
+.v-window.v-window-date.date.v-touchkit-popover.v-touchkit-relative {
+    border-radius: 10px;
+    min-width: 260px;
+}
+
+.v-window.v-window-date.date.v-touchkit-popover.v-touchkit-relative .v-window-wrap {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  /*  border-radius: 0px;
+    border: none;
+    background: transparent; */
+}
+
+.v-csslayout .v-csslayout-date,
+.v-csslayout-date.v-datefield-calendarpanel {
+    margin-top: none !important;
+}
+
+.v-csslayout .v-label.v-label-blue-text {
+    color: #4e64a1;
+}
+
+.v-nativebutton.v-nativebutton-from-button.from-button.v-nativebutton-user-name {
+	width: 100%;
+	height: 20px;
+	padding: 0px 7px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.from-button.v-nativebutton-user-name .v-button-caption,
+.v-nativebutton.v-nativebutton-from-button.from-button.v-nativebutton-user-name .v-nativebutton-caption {
+	display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.v-touchkit-navbar.v-touchkit-navbar-login {
+    border: 0px solid #9f9f9f;
+	-webkit-box-shadow: 0 0 20px rgba(116, 116, 116, 0.6);
+}
+
+.v-csslayout.v-csslayout-login  {
+	-webkit-box-shadow: 0 0 20px rgba(116, 116, 116, 0.6);
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.v-csslayout.v-csslayout-login > .v-csslayout-margin {
+    margin: 0px;
+	margin-bottom: 10px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-width: 0px;
+}
+
+.v-button.v-button-no-decoration.v-button-thesis-caption .v-button-wrap,
+.v-button.v-button-no-decoration.v-button-thesis-caption:active .v-button-wrap {
+	padding-left: 0px;
+}
+
+.v-touchkit-navbar .v-button.v-button-thesis-caption .v-icon {
+    height: initial;
+	margin: 7px 0 0;
+}
+
+.v-label.v-label-message-button-from.message-button-from.v-label-h2.h2.v-label-info-card.info-card.v-label-undef-w {
+	white-space: normal;
+}
+
+.v-label.v-label-light.light.v-label-info-card-comment.info-card-comment {
+	margin-top: 0px;
+}
+
+.v-label.v-label-message-button-from.message-button-from.v-label-h2.h2.v-label-info-card.info-card {
+    width: 280px;
+    padding-right: 0px;
+}
+
+.v-button.v-disabled.v-button-icon-arrow-up.icon-arrow-up {
+    width: 44px;
+}
+
+.v-button.v-disabled.v-button-icon-arrow-down.icon-arrow-down {
+    width: 44px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.from-button.v-nativebutton-field.field.v-nativebutton-contractor-field.contractor-field {
+	max-width: 550px;
+}
+
+.v-nativebutton.v-nativebutton-from-button.from-button.v-nativebutton-field.field.v-nativebutton-contractor-field.contractor-field .v-nativebutton-caption {
+	max-width: 550px;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 550px;
+}
+
+.right .v-datefield-caption-light-text .v-textfield.v-datefield-textfield.v-textfield-readonly.v-readonly {
+	font-size: 14px;
+}
+
+.left .v-datefield-caption-light-text .v-textfield.v-datefield-textfield.v-textfield-readonly.v-readonly {
+	font-size: 14px;
+}
+
+.v-label-description-ellipsis {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 95%;
+}
+
+.v-label-number {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 60%;
+}
+
+.v-label-info-number {
+	overflow: hidden;
+}
+
+.no-filter-search-folder-label {
+    line-height: 43px;
+    font-size: 17px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+
+.no-filter-no-childs-search-folder-label {
+     color: lightgray;
+     line-height: 43px;
+     font-size: 17px;
+     font-weight: bold;
+     text-overflow: ellipsis;
+}
+
+.word-wrap-label {
+      white-space: normal;
+}
+
+.v-button-customlink {
+	background: none!important;
+	background-color: #fff;
+	box-shadow: none!important;
+}
+
+.v-button-customlink .v-button-wrap {
+	background: none;
+	background-color: #fff;
+	font-weight: normal;
+	color: #1b699f;
+	text-align: left;
+	box-shadow: none!important;
+	padding-left: 0;
+}
+
+.v-button-customlink .v-button-wrap .v-button-caption {
+	background-color: #fff;
+}
+
+.no-border-top:before {
+	border-top: none!important;
+}
+
+.bold-font {
+	font-weight: bold;
+}
+
+.question-attr-content {
+	margin-left: 5px;
+}
+
+.question-attr-layout {
+	margin: 5px 0;
+	width: 100%!important;
+}
+
+.question-attr-layout : before {
+	border-top: 1px solid black;
+}
+
+.solution-navbutton {
+	line-height: 30px!important;
+	font-weight: normal!important;
+	font-size: 14px!important;
+}

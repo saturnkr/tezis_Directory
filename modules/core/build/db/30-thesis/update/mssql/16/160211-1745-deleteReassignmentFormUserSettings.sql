@@ -1,0 +1,1 @@
+delete from sec_user_setting where name = 'reassignment.form'

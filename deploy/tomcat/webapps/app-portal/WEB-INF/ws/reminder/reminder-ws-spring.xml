@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="reminderWebService" class="com.haulmont.thesis.portal.reminder.ws.ReminderWebService">
+        <property name="securityService" ref="encryptService"/>
+    </bean>
+
+    <bean id="reminderPayloadMapping"
+          class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+        <property name="mappings">
+            <props>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}EchoRequest">reminderEchoEndpoint</prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetMaxFileSizeRequest">
+                    reminderGetMaxFileSizeEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetAuthTypeRequest">
+                    reminderGetAuthTypeEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}LoginRequest">reminderLoginEndpoint</prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}CreateTaskRequest">
+                    reminderCreateTaskEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}LogoutRequest">reminderLogoutEndpoint</prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetInfoRequest">reminderGetInfoEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}IsPermittedEntityRequest">
+                    reminderIsPermittedEntityEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}IsUserCanSelectMainAttachmentsRequest">
+                    reminderIsUserCanSelectMainAttachmentsEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}IsCreateNewAttachmentFromAttachmentEnabledRequest">
+                    reminderIsCreateNewAttachmentFromAttachmentEnabledEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}CreateEntityRequest">
+                    reminderCreateEntityEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}LoadEntityRequest">
+                    reminderLoadEntityEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}LoadListEntitiesRequest">
+                    reminderLoadListEntitiesEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}SaveEntityRequest">
+                    reminderSaveEntityEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetReminderVersionRequest">
+                    reminderGetReminderVersionEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetAllowCardTypesRequest">
+                    reminderGetAllowCardTypesEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetPublicKeyRequest">
+                    reminderGetPublicKeyEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetBarcodeRequest">
+                    reminderGetBarcodeEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}IsTaskFinishedRequest">
+                    reminderIsTaskFinishedEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}OfficeActionsRequest">
+                    reminderOfficeActionsEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}RemoveCardInfoRequest">
+                    reminderRemoveCardInfoEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}GetCryptTypeRequest">
+                    reminderGetCryptTypeEndpoint
+                </prop>
+                <prop key="{http://www.haulmont.com/schema/thesis/reminder}ValidationAttachActionRequest">
+                    reminderValidationAttachActionEndpoint
+                </prop>
+            </props>
+        </property>
+        <property name="interceptors">
+            <list>
+                <ref local="reminderValidatingInterceptor"/>
+                <ref local="reminderLoggingInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="reminderValidatingInterceptor"
+          class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+        <property name="xsdSchema" ref="reminderSchema"/>
+        <property name="validateRequest" value="true"/>
+        <property name="validateResponse" value="true"/>
+    </bean>
+
+    <bean id="reminderLoggingInterceptor"
+          class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor"/>
+
+    <!--<bean id="reminderGetRequestInfoInterceptor" class="com.haulmont.thesis.portal.reminder.ws.GetRequestInfoInterceptor"/>-->
+
+    <bean id="reminderEchoEndpoint" class="com.haulmont.thesis.portal.reminder.ws.EchoEndpoint"/>
+
+    <bean id="reminderGetMaxFileSizeEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetMaxFileSizeEndpoint"/>
+
+    <bean id="reminderGetAuthTypeEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetAuthTypeEndpoint"/>
+
+    <bean id="reminderGetCryptTypeEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetCryptTypeEndpoint"/>
+
+    <bean id="reminderLoginEndpoint" class="com.haulmont.thesis.portal.ws.LoginEndpoint">
+        <property name="service" ref="loginService"/>
+        <property name="schema" value="http://www.haulmont.com/schema/thesis/reminder"/>
+    </bean>
+
+    <bean id="reminderIsCreateNewAttachmentFromAttachmentEnabledEndpoint" class="com.haulmont.thesis.portal.reminder.ws.IsCreateNewAttachmentFromAttachmentEnabledEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderIsPermittedEntityEndpoint"
+          class="com.haulmont.thesis.portal.reminder.ws.IsPermittedEntityEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderIsUserCanSelectMainAttachmentsEndpoint"
+          class="com.haulmont.thesis.portal.reminder.ws.IsUserCanSelectMainAttachmentsEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderCreateTaskEndpoint" class="com.haulmont.thesis.portal.reminder.ws.CreateTaskEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderLogoutEndpoint" class="com.haulmont.thesis.portal.ws.LogoutEndpoint">
+        <property name="service" ref="loginService"/>
+    </bean>
+
+    <bean id="reminderGetInfoEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetInfoEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderCreateEntityEndpoint" class="com.haulmont.thesis.portal.reminder.ws.CreateEntityEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderLoadEntityEndpoint" class="com.haulmont.thesis.portal.reminder.ws.LoadEntityEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderLoadListEntitiesEndpoint" class="com.haulmont.thesis.portal.reminder.ws.LoadListEntitiesEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderRemoveCardInfoEndpoint" class="com.haulmont.thesis.portal.reminder.ws.RemoveCardInfoEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderGetAllowCardTypesEndpoint"
+          class="com.haulmont.thesis.portal.reminder.ws.GetAllowCardTypesEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderSaveEntityEndpoint" class="com.haulmont.thesis.portal.reminder.ws.SaveEntityEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderGetReminderVersionEndpoint"
+          class="com.haulmont.thesis.portal.reminder.ws.GetReminderVersionEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminder" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">
+        <property name="schema" ref="reminderSchema"/>
+        <property name="portTypeName" value="Reminder"/>
+        <property name="locationUri" value="http://${cuba.webHostName}:${cuba.webPort}/${cuba.webContextName}/ws/assistant"/>
+    </bean>
+
+    <bean id="reminderSchema" class="org.springframework.xml.xsd.SimpleXsdSchema">
+        <property name="xsd" value="/WEB-INF/ws/reminder/reminder-ws.xsd"/>
+    </bean>
+
+    <bean id="reminderGetPublicKeyEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetPublicKeyEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderGetBarcodeEndpoint" class="com.haulmont.thesis.portal.reminder.ws.GetBarcodeEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderIsTaskFinishedEndpoint" class="com.haulmont.thesis.portal.reminder.ws.IsTaskFinishedEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderOfficeActionsEndpoint" class="com.haulmont.thesis.portal.reminder.ws.OfficeActionsEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+
+    <bean id="reminderValidationAttachActionEndpoint"
+          class="com.haulmont.thesis.portal.reminder.ws.ValidationAttachActionEndpoint">
+        <property name="service" ref="reminderWebService"/>
+    </bean>
+</beans>

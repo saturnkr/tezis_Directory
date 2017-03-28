@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.tezisdirectory.entity.CostArticle"
+          extends="_local"
+          name="costArticle-browse">
+        <property name="holder"
+                  view="_local"/>
+        <property name="commercial"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.tezisdirectory.entity.CostArticle"
+          extends="_local"
+          name="costArticle-edit">
+        <property name="holder"
+                  view="_local"/>
+        <property name="commercial"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.tezisdirectory.entity.ExtSimpleDoc"
+          extends="browse"
+          name="ext-browse">
+        <property name="costart"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.tezisdirectory.entity.ExtSimpleDoc"
+          extends="edit"
+          name="ext-edit">
+        <property name="costart"
+                  view="_minimal"/>
+    </view>
+</views>

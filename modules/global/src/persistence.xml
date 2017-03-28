@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="1.0">
+    <persistence-unit name="tezis_Directory"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.tezisdirectory.entity.CostArticle</class>
+        <class>com.company.tezisdirectory.entity.ExtSimpleDoc</class>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.tezisdirectory.web.costarticle.CostArticleBrowse"
+        lookupComponent="costArticleTable"
+        messagesPack="com.company.tezisdirectory.web.costarticle">
+    <dsContext>
+        <collectionDatasource id="costArticleDs"
+                              class="com.company.tezisdirectory.entity.CostArticle"
+                              view="costArticle-browse">
+            <query>
+                <![CDATA[select e from tezisdirectory$CostArticle e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="costArticleTable"
+            spacing="true">
+        <filter id="genericFilter"
+                applyTo="costArticleTable"
+                datasource="costArticleDs"
+                stylename="edit-area">
+            <properties include=".*"/>
+        </filter>
+        <table id="costArticleTable"
+               multiselect="true"
+               presentations="true"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="costarticle"/>
+                <column id="holder"/>
+                <column id="commercial"/>
+            </columns>
+            <rows datasource="costArticleDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="costArticleTable.create"/>
+                <button id="editBtn"
+                        action="costArticleTable.edit"/>
+                <button id="removeBtn"
+                        action="costArticleTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

@@ -1,0 +1,17 @@
+-- $Id$
+-- $Description:
+
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:create',1,'7091f5ef-a77a-450a-834a-39406885676e');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:update',1,'7091f5ef-a77a-450a-834a-39406885676e');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:delete',1,'7091f5ef-a77a-450a-834a-39406885676e');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 10,'df$ReservationNumber.browse',1,'7091f5ef-a77a-450a-834a-39406885676e');
+
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:create',1,'0c018061-b26f-4de2-a5be-dff348347f93');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:update',1,'0c018061-b26f-4de2-a5be-dff348347f93');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:delete',1,'0c018061-b26f-4de2-a5be-dff348347f93');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 10,'df$ReservationNumber.browse',1,'0c018061-b26f-4de2-a5be-dff348347f93');
+
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:create',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:update',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 20,'df$ReservationNumber:delete',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+insert into SEC_PERMISSION (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,permission_type,target,value,role_id) VALUES (newid(),current_timestamp,'admin',1,current_timestamp,null,null,null, 10,'df$ReservationNumber.browse',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');

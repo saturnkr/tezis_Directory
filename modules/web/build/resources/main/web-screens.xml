@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/screens.xml"/>
+    <screen id="tezisdirectory$CostArticle.edit"
+            template="com/company/tezisdirectory/web/costarticle/costarticle-edit.xml"/>
+    <screen id="tezisdirectory$CostArticle.lookup"
+            template="com/company/tezisdirectory/web/costarticle/costarticle-browse.xml"/>
+    <screen id="tezisdirectory$CostArticle.browse"
+            template="com/company/tezisdirectory/web/costarticle/costarticle-browse.xml"/>
+    <screen id="df$SimpleDoc.browse"
+            template="com/company/tezisdirectory/web/ui/simpledoc/ext-simple-doc-browse.xml"/>
+    <screen id="df$SimpleDoc.edit"
+            template="com/company/tezisdirectory/web/ui/simpledoc/ext-simple-doc-edit.xml"/>
+</screen-config>

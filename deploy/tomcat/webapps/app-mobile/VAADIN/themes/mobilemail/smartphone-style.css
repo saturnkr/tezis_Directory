@@ -1,0 +1,670 @@
+@import "../base/styles.css";
+
+
+/*
+------------------------------------------------
+[Contents]
+------------------------------------------------
+1. Layout
+2. Caption
+3. Text Area
+4. Button
+5. Native button
+6. Checkbox
+7. Switch
+8. Table
+------------------------------------------------
+
+/*1. Layout*/
+.message-view .v-csslayout.v-csslayout-message-layout-ex.message-layout-ex.v-csslayout-layout-background.layout-background {
+ /*  background-color: #f2f2f2;  */
+   font-size: 13px;
+}
+
+.tablet .message-view .v-touchkit-navview-wrapper {
+	background-color: #f2f2f2;
+}
+
+.phone .message-view .v-touchkit-navview-wrapper {
+	background-color: #f2f2f2;
+}
+
+.v-horizontallayout .v-horizontallayout.v-horizontallayout-task-info {
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+.v-label.v-label-task-info.task-info {
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 0px 0px 5px;
+}
+
+.task-info .v-label.v-label-description-label.description-label {
+    margin-left: 10px;
+    margin-top: 13px;
+}
+
+.task-info .v-horizontallayout.description-horizontallayout {
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+.v-csslayout .v-csslayout.v-csslayout-task-info.task-info {
+    width: 100%;
+    border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+.task-info .v-button.v-button-in-card {
+    width: 31px;
+    display: inline-block;
+    margin: 0;
+    margin: 0px 5px;
+    background: transparent;
+    border: 1px solid rgba(142,147,152,0.66);
+    border-radius: 5px;
+    color: #3d3f41;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.3);
+    height: 29px;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.task-info .v-button-in-card .v-button-wrap,
+.v-touchkit-verticalcomponentgroup .v-disabled.v-button .v-button-wrap {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.23)), to(rgba(73,73,73,.23)));
+    border-radius: 4px;
+    padding: 0 13px;
+    color: #3d3f41;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    font-size: 13px;
+    line-height: 27px;
+    -webkit-box-shadow: none;
+    height: 28px;
+}
+
+.user-lookup .v-disabled.v-button .v-button-wrap {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.23)), to(rgba(73,73,73,.23)));
+    border-radius: 4px;
+    padding: 0 13px;
+    color: #3d3f41;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    font-size: 13px;
+    line-height: 27px;
+    -webkit-box-shadow: none;
+    height: 32px;
+}
+
+.v-csslayout-task-info .v-button-in-card.attachment-in-card {
+    background: transparent url(graphics/smartphoneicons/card-attachments.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.v-csslayout-task-info .v-button-in-card.thesis-actions-in-card {
+    background: transparent url(graphics/smartphoneicons/tesis-actions.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+/* create button style */
+.phone .v-button.v-button-create.create {
+    background: transparent url(graphics/smartphoneicons/create.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-create.create {
+    background: transparent url(graphics/ico/createIcon.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* action log style */
+.phone .v-button.v-button-action-log.action-log {
+    background: transparent url(graphics/smartphoneicons/log.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-action-log.action-log {
+    background: transparent url(graphics/ico/log.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* questions style */
+.phone .v-button.v-button-questions.questions {
+    background: transparent url(graphics/smartphoneicons/questions.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-questions.questions {
+    background: transparent url(graphics/ico/questions.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* members style */
+.phone .v-button.v-button-members.members {
+    background: transparent url(graphics/smartphoneicons/members.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-members.members {
+    background: transparent url(graphics/ico/members.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* detail-info style */
+.phone .v-button.v-button-detailInfo.detailInfo {
+    background: transparent url(graphics/smartphoneicons/detail-info.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-detailInfo.detailInfo {
+    background: transparent url(graphics/ico/detail-info.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* old action log style */
+.phone .v-button.v-button-action-old-log.action-old-log {
+    background: transparent url(graphics/ico/log.png) no-repeat 50% 50%;
+    background-size: 16px 16px;
+}
+
+.tablet .v-button.v-button-action-old-log.action-old-log {
+    background: transparent url(graphics/ico/log.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* delete style */
+.phone .v-button.v-button-delete.delete {
+    background: transparent url(graphics/smartphoneicons/delete.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-delete.delete {
+    background: transparent url(graphics/ico/trashIcon.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* users role style*/
+.phone .v-button.v-button-users-role.users-role {
+    background: transparent url(graphics/smartphoneicons/roles.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-users-role.users-role {
+    background: transparent url(graphics/ico/roles.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* save style*/
+.phone .v-button.v-button-save.save {
+    background: transparent url(graphics/smartphoneicons/save.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-save.save {
+    background: transparent url(graphics/ico/saveIcon.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* exit style*/
+.phone .v-button.v-button-exit.exit {
+    background: transparent url(graphics/smartphoneicons/exit.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-exit.exit {
+    background: transparent url(graphics/ico/exit.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* refresh style*/
+.phone .v-button.v-button-refresh.refresh {
+    background: transparent url(graphics/smartphoneicons/refresh.png) no-repeat 50% 70%;
+    background-size: 21px 21px;
+}
+
+.tablet .v-button.v-button-refresh.refresh {
+    background: transparent url(graphics/ico/refresh.png) no-repeat 50% 50%;
+}
+
+.v-touchkit-popover .v-button.v-button-refresh.refresh {
+    background: transparent url(graphics/ico/refresh.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* folders-show style*/
+.tablet .v-button.v-button-folders-show.folders-show {
+    background: transparent url(graphics/ico/foldersIcon.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* rotate style*/
+.tablet .v-button.v-button-rotate.rotate {
+    background: transparent url(graphics/ico/rotate.png) no-repeat 50% 50%;
+}
+/*--------------------------------------------------------*/
+/* pdf style*/
+.phone .v-button.v-button-pdf.pdf {
+     background: transparent url(graphics/smartphoneicons/attach-pdf.png) no-repeat 25% 50%;
+     background-size: 35px;
+}
+
+.tablet .v-button.v-button-pdf.pdf {
+     background: transparent url(graphics/ico/attach-pdf.png) no-repeat 0% 50%;
+}
+/*--------------------------------------------------------*/
+/* word style*/
+.phone .v-button.v-button-word.word {
+     background: transparent url(graphics/smartphoneicons/attach-word.png)  no-repeat 25% 50%;
+     background-size: 35px;
+}
+
+.tablet .v-button.v-button-word.word {
+     background: transparent url(graphics/ico/attach-word.png) no-repeat 0% 50%;
+}
+/*--------------------------------------------------------*/
+/* pict style*/
+.phone .v-button.v-button-pict.pict {
+     background: transparent url(graphics/smartphoneicons/attach-img.png)  no-repeat 25% 50%;
+     background-size: 35px;
+}
+
+.tablet .v-button.v-button-pict.pict {
+     background: transparent url(graphics/ico/attach-pict.png) no-repeat 0% 50%;
+}
+/*--------------------------------------------------------*/
+/* excel style*/
+.phone .v-button.v-button-excel.excel {
+     background: transparent url(graphics/smartphoneicons/attach-excel.png) no-repeat 25% 50%;
+     background-size: 35px;
+}
+
+.tablet .v-button.v-button-excel.excel {
+     background: transparent url(graphics/ico/attach-excel.png) no-repeat 0% 50%;
+}
+/*--------------------------------------------------------*/
+/* def-attach style*/
+.phone .v-button.v-button-def-attach.def-attach {
+     background: transparent url(graphics/smartphoneicons/attach.png) no-repeat 25% 50%;
+     background-size: 35px;
+}
+
+.tablet .v-button.v-button-def-attach.def-attach {
+     background: transparent url(graphics/ico/attach.png) no-repeat 0% 50%;
+}
+/*--------------------------------------------------------*/
+/* counter style*/
+.v-button.v-button-counter.counter {
+	background: transparent url(graphics/smartphoneicons/attachments-counter.png) no-repeat 50% 50%;
+    background-size: 25px;
+	-webkit-box-shadow: none;
+	margin: 0px;
+	position: absolute;
+	top: 1px;
+	margin-left: -5px;
+}
+
+.v-button-counter .v-button-wrap {
+	background: none;
+	-webkit-box-shadow: none;
+	width: 18px;
+	height: 18px;
+	color: #4E5D6D;
+	padding: 0px;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.v-button-counter .v-button-caption {
+	line-height: 17px;
+	text-shadow: 0 -1px 0 rgba(218, 218, 218, 0.75);
+}
+/*--------------------------------------------------------*/
+.v-app .v-button.v-button-on-bar .v-icon {
+    height: auto;
+    margin: 5px;
+}
+
+.v-app .v-button.v-button-on-bar .v-button-wrap{
+    padding: 0px;
+    width: 31px;
+	height: 29px;
+}
+
+.phone .v-csslayout .v-csslayout-in-card-text .v-caption.v-caption-main-light-text {
+    font-size: 13px;
+    font-weight: bold;
+    color: #4d4d4d;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    margin: 0px 0px 5px;
+}
+
+.tablet .v-csslayout .v-csslayout-in-card-text .v-caption.v-caption-main-light-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #44698B;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    margin: 10px 10px 0;
+}
+
+.v-csslayout .v-csslayout-in-card-text .v-textarea {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* margin: 10px; */
+    border: 1px solid rgb(187, 187, 187);
+    background-color: white;
+    padding: 10px;
+    -webkit-box-shadow: rgba(136, 134, 134, 0.498039) 0px 1px 0px;
+    overflow: hidden;
+    color: #44678b;
+}
+
+.time-layout .v-label.v-label-task-info.task-info {
+	margin: 10px auto;
+}
+
+.time-layout .v-label.v-label-blue-text.blue-text {
+	position: absolute;
+	right: 30px;
+	margin: 10px auto;
+}
+
+.time-layout .v-button.v-button-calendar.calendar {
+	position: absolute;
+	right: 0px;
+	margin: 10px auto;
+}
+
+.time-layout .v-nativebutton.v-nativebutton-from-button {
+	position: absolute;
+	right: 0px;
+	margin: 8px auto;
+}
+
+.v-csslayout-in-card-text .from-button {
+	border: 1px solid #87a2bf;
+	border-radius: 10px;
+	background: #dce6ef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dee8f1), to(#cedae5));
+	line-height: 1;
+	padding: 1px 7px;
+	margin-left: 0px;
+	vertical-align: 3px;
+	height: 25px;
+}
+
+.v-csslayout-in-card-text .from-button .v-nativebutton-caption {
+	color: #4d4d4d;
+	float: left;
+	margin-left: 5px;
+}
+
+.switch-info .v-checkbox input {
+	float: right;
+	margin-top: 15px;
+	margin-bottom: 7px;
+}
+
+.switch-info .v-checkbox label {
+	float: left;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 43px;
+	height: 43px;
+	margin-left: -10px;
+	padding-left: 10px;
+	color: #4d4d4d;
+}
+
+.v-csslayout-smartphone-actions .v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-red {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#F1E1E0, #D49E9B);
+    border-color: #CF938F;
+	margin-left: 0px;
+	width: 100%;
+}
+
+.v-csslayout-smartphone-actions .v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-green {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#E5EEE3, #ADC9A6);
+    border-color: #A4C39C;
+	margin-left: 0px;
+	width: 100%;
+}
+
+.v-csslayout-smartphone-actions .v-nativebutton.v-nativebutton-from-button.v-nativebutton-option-blue {
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#E3E8EE, #A6B6C9);
+    border-color: #9CAEC3;
+	margin-left: 0px;
+	width: 100%;
+}
+
+.v-csslayout-smartphone-actions .from-button .v-nativebutton-caption {
+	color: #4d4d4d;
+	font-weight: bold;
+}
+
+.v-csslayout-smartphone-actions .v-csslayout.v-csslayout-action-layout.action-layout {
+	float: none;
+	margin: 10px 0px;
+}
+
+.v-csslayout-in-card-text .v-verticallayout.v-verticallayout-vertical-margin.vertical-margin {
+	margin-top: 10px;
+}
+
+.v-csslayout-action-log .v-label.v-label-loc-name.loc-name {
+	color: #44698B;
+	margin-bottom: 5px;
+}
+
+.v-csslayout-action-log .v-label.v-label-display-user.display-user {
+	color: #4D4D4D;
+	margin-bottom: 5px;
+    display: block;
+    white-space: normal;
+}
+
+.v-csslayout-action-log .v-label.v-label-comment.comment {
+
+}
+
+.v-csslayout-action-log .v-label.v-label-outcome-result.outcome-result {
+	color: #056619;
+
+}
+
+.v-csslayout-action-log .v-label.v-label-overdue.overdue {
+	color: #AD271F;
+}
+
+.v-csslayout.v-csslayout-login .v-label {
+	font-weight: bold;
+	color: #4D4D4D;
+}
+
+.v-csslayout.v-csslayout-login-fields.login-fields {
+	max-width: 400px;
+}
+
+.v-nativebutton.v-disabled.v-nativebutton-from-button.from-button{
+	opacity: .9;
+	border: 1px solid #BBB;
+	background: #DCE6EF -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#D8DBDE));
+}
+
+.v-caption.v-disabled {
+	opacity: .9;
+}
+
+.phone .v-checkbox-disabled {
+    opacity: .9;
+}
+
+.phone .from-button .v-nativebutton-caption {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.v-csslayout-in-card-text .v-textarea.v-disabled {
+	opacity: .9;
+	color: #4D4D4D;
+}
+
+.v-csslayout .v-csslayout-in-card-text .v-caption.v-caption-expanding-text-area {
+    font-size: 13px;
+    font-weight: bold;
+    color: #4d4d4d;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    margin: 0px 0px 5px;
+}
+
+.v-csslayout .v-expandingtextarea.v-expandingtextarea-expanding-text-area.expanding-text-area {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+.v-csslayout .v-csslayout-amount .v-textarea {
+    border-radius: 5px;
+    border: 1px solid rgb(187, 187, 187);
+    background-color: white;
+    -webkit-box-shadow: rgba(207, 207, 207, 0.498039) 0px 1px 0px;
+    overflow: hidden;
+    color: #44678b;
+    -webkit-appearance: none;
+}
+
+.v-csslayout-amount .v-textarea.v-disabled {
+	opacity: .9;
+	color: #4D4D4D;
+}
+
+.v-csslayout.v-csslayout-amount .v-captiontext {
+    font-size: 13px;
+    font-weight: bold;
+    color: #4d4d4d;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.v-touch .v-window.v-window-dialog-view.dialog-view {
+	top: 100px !important;
+}
+
+.v-csslayout.v-csslayout-role-smartphone .v-caption.v-caption-v-touchkit-verticalcomponentgroup.v-caption-roles {
+	float: none;
+	height: 20px;
+	line-height: 29px;
+	padding-top: 5px;
+	padding-left: 0px;
+}
+
+.v-csslayout.v-csslayout-role-smartphone .v-touchkit-verticalcomponentgroup.v-csslayout-roles {
+	clear: both;
+	float: none;
+	min-width: 100%;
+}
+
+.v-csslayout.v-csslayout-role-smartphone .v-nativebutton-caption {
+	width: 100%;
+	text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.v-label.v-label-dialog-view.dialog-view {
+	display: block;
+	white-space: normal;
+	font-weight: bold;
+}
+
+/*forward back*/
+.phone .v-button.v-button-navigate-back.navigate-back {
+	-webkit-border-image: url(graphics/smartphoneicons/back-button-2x.png) 0 9 0 30 stretch stretch;
+	-webkit-appearance: none;
+	display: block;
+	position: relative;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 43px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	white-space: nowrap;
+	border-width: 0 6px 0 13px;
+	width: auto;
+	height: 30px;
+	padding: 0 4px 0 3px;
+
+	background: rgba(0, 0, 0, 0);
+	color: #3D3F41;
+	font-size: 12px;
+	line-height: 30px;
+	margin-right: auto;
+	content: "";
+	-webkit-box-shadow: none;
+}
+
+.tablet .v-button.v-button-navigate-back.navigate-back {
+	-webkit-border-image: url(graphics/smartphoneicons/back-button.png) 0 9 0 30 stretch stretch;
+	-webkit-appearance: none;
+	display: block;
+	position: relative;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 43px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	white-space: nowrap;
+	border-width: 0 6px 0 13px;
+	width: auto;
+	height: 30px;
+	padding: 0 4px 0 3px;
+
+	background: rgba(0, 0, 0, 0);
+	color: #3D3F41;
+	font-size: 12px;
+	line-height: 30px;
+	margin-right: auto;
+	content: "";
+	-webkit-box-shadow: none;
+}
+
+.v-button.v-button-navigate-back.navigate-back .v-button-wrap {
+	background: none;
+	padding: 0px;
+	line-height: 30px;
+}
+
+.v-button.v-button-navigate-back.navigate-back .v-button-wrap .v-button-caption {
+	line-height: 30px;
+	display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*---------------------------------------------------*/
+
+.v-csslayout-action-log .v-scrollable.v-table-body-wrapper.v-table-body > div {
+	max-height: 100%;
+}
+
+.v-touchkit-navbutton.v-touchkit-navbutton-nav-folder.nav-folder {
+	padding-right: 20px;
+}
+
+.bottom-toolbar .v-touchkit-navbar-left {
+	max-width: 50%;
+}
+
+.v-table-row-taskremindoverdue  .v-table-cell-content {
+    color: #AD271F
+}
+
+.ellipsis .v-button-wrap, .v-button-caption {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 100%;
+}

@@ -1,0 +1,1 @@
+ update wf_card set description = p1.PATTERN_NAME from TM_TASK_PATTERN as p1 where p1.card_id= wf_card.id and description is null

@@ -1,0 +1,1 @@
+update WF_ASSIGNMENT set outcome='Complete' where outcome='CompleteWoControl';

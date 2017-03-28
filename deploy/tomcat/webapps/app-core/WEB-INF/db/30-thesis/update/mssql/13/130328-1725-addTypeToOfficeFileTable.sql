@@ -1,0 +1,4 @@
+--$Id:
+--Description:
+ALTER TABLE DF_OFFICE_FILE ADD TYPE varchar(1)^
+UPDATE DF_OFFICE_FILE set TYPE='D'^

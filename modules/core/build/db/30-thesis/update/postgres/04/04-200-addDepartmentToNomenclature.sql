@@ -1,0 +1,4 @@
+--$Id: 04-200-addDepartmentToNomenclature.sql 3393 2011-12-01 12:55:10Z shishov $
+
+alter table DF_OFFICE_FILE_NOMENCLATURE add column DEPARTMENT_ID uuid^
+alter table DF_OFFICE_FILE_NOMENCLATURE add constraint FK_DF_OFFICE_FILE_NOMENCLATURE_DEPARTMENT foreign key (DEPARTMENT_ID) references DF_DEPARTMENT (CORRESPONDENT_ID)^

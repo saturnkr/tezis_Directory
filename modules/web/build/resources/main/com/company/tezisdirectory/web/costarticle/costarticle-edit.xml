@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.tezisdirectory.web.costarticle.CostArticleEdit"
+        datasource="costArticleDs"
+        messagesPack="com.company.tezisdirectory.web.costarticle">
+    <dsContext>
+        <datasource id="costArticleDs"
+                    class="com.company.tezisdirectory.entity.CostArticle"
+                    view="costArticle-edit"/>
+    </dsContext>
+    <layout expand="tabsheet"
+            height="100%"
+            spacing="true"
+            width="100%">
+        <tabSheet id="tabsheet">
+            <tab id="mainTab"
+                 caption="msg://mainTab"
+                 margin="true">
+                <scrollBox id="scrollBox56"
+                           height="100%">
+                    <fieldGroup id="fieldGroup"
+                                datasource="costArticleDs">
+                        <column width="270px">
+                            <field id="costarticle"/>
+                            <field id="holder"/>
+                            <field id="commercial"/>
+                        </column>
+                    </fieldGroup>
+                </scrollBox>
+            </tab>
+        </tabSheet>
+        <iframe id="windowActions"
+                screen="editWindowActions"/>
+    </layout>
+</window>

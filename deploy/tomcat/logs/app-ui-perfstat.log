@@ -1,0 +1,227 @@
+Performance Statistics   2017-03-28 15:22:00 - 2017-03-28 15:24:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+TDS null                                                60,0          60          60         0,0           1
+mainWindow#init                                        299,0         299         299         0,0           1
+mainWindow#inject                                       20,0          20          20         0,0           1
+mainWindow#loadDescriptor                              555,0         555         555         0,0           1
+mainWindow#xml                                         103,0         103         103         0,0           1
+
+Performance Statistics   2017-03-28 15:24:00 - 2017-03-28 15:26:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+mainWindow#ready                                         0,0           0           0         0,0           1
+mainWindow#uiPermissions                                 0,0           0           0         0,0           1
+
+Performance Statistics   2017-03-28 15:26:00 - 2017-03-28 15:28:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+TDS null                                                 9,0           9           9         0,0           1
+
+Performance Statistics   2017-03-28 15:28:00 - 2017-03-28 15:30:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:30:00 - 2017-03-28 15:32:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+TDS null                                                12,0          12          12         0,0           1
+
+Performance Statistics   2017-03-28 15:32:00 - 2017-03-28 15:34:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+TDS null                                                55,0          55          55         0,0           1
+mainWindow#init                                        286,0         286         286         0,0           1
+mainWindow#inject                                       17,0          17          17         0,0           1
+mainWindow#loadDescriptor                              462,0         462         462         0,0           1
+mainWindow#ready                                         0,0           0           0         0,0           1
+mainWindow#uiPermissions                                 0,0           0           0         0,0           1
+mainWindow#xml                                          80,0          80          80         0,0           1
+sec$User.lookup#init                                     0,0           0           0         0,0           1
+sec$User.lookup#inject                                   0,0           0           0         0,0           1
+sec$User.lookup#loadDescriptor                          38,0          38          38         0,0           1
+sec$User.lookup#ready                                    0,0           0           0         0,0           1
+sec$User.lookup#uiPermissions                            0,0           0           0         0,0           1
+sec$User.lookup#xml                                     14,0          14          14         0,0           1
+sec$User.lookup@usersDs                                 22,0          22          22         0,0           1
+tezisdirectory$CostArticle.edit#init                     0,0           0           0         0,0           1
+tezisdirectory$CostArticle.edit#inject                   0,0           0           0         0,0           1
+tezisdirectory$CostArticle.edit#loadDescriptor          79,0          79          79         0,0           1
+tezisdirectory$CostArticle.edit#ready                    0,0           0           0         0,0           1
+tezisdirectory$CostArticle.edit#setItem                  2,0           2           2         0,0           1
+tezisdirectory$CostArticle.edit#uiPermissions            0,0           0           0         0,0           1
+tezisdirectory$CostArticle.edit#xml                      5,0           5           5         0,0           1
+tezisdirectory$CostArticle.edit.windowActions#loadDescriptor         9,0           9           9         0,0           1
+tezisdirectory$CostArticle.lookup#init                   0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#inject                 0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#loadDescriptor       361,0         361         361         0,0           1
+tezisdirectory$CostArticle.lookup#ready                  0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#uiPermissions          0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#xml                   10,0          10          10         0,0           1
+tezisdirectory$CostArticle.lookup@costArticleDs         31,0          31          31         0,0           1
+windowActions#xml                                        2,0           2           2         0,0           1
+
+Performance Statistics   2017-03-28 15:36:00 - 2017-03-28 15:38:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+TDS null                                                53,0          53          53         0,0           1
+actionsFrame#xml                                         2,0           2           2         0,0           1
+cardAttachmentsFrame#xml                                 7,0           7           7         0,0           1
+cardCommentFrame#xml                                     7,0           7           7         0,0           1
+cardLinksFrame#xml                                       5,0           5           5         0,0           1
+cardProcFrame#xml                                        4,0           4           4         0,0           1
+cardProjectsFrame#xml                                    5,0           5           5         0,0           1
+cardRolesFrame#xml                                       8,0           8           8         0,0           1
+cardTreeFrame#xml                                        6,0           6           6         0,0           1
+correspondenceHistoryFrame#xml                           5,0           5           5         0,0           1
+df$SimpleDoc.edit#init                                 117,0         117         117         0,0           1
+df$SimpleDoc.edit#inject                                12,0          12          12         0,0           1
+df$SimpleDoc.edit#loadDescriptor                      1366,0        1366        1366         0,0           1
+df$SimpleDoc.edit#ready                                  0,0           0           0         0,0           1
+df$SimpleDoc.edit#setItem                              672,0         672         672         0,0           1
+df$SimpleDoc.edit#uiPermissions                          0,0           0           0         0,0           1
+df$SimpleDoc.edit#xml                                   48,0          48          48         0,0           1
+df$SimpleDoc.edit.actionsFrame#init                      0,0           0           0         0,0           1
+df$SimpleDoc.edit.actionsFrame#inject                    0,0           0           0         0,0           1
+df$SimpleDoc.edit.actionsFrame#loadDescriptor            4,0           4           4         0,0           1
+df$SimpleDoc.edit.actionsFrame#uiPermissions             0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardAttachmentsFrame#init            161,0         161         161         0,0           1
+df$SimpleDoc.edit.cardAttachmentsFrame#inject            4,0           4           4         0,0           1
+df$SimpleDoc.edit.cardAttachmentsFrame#loadDescriptor       148,0         148         148         0,0           1
+df$SimpleDoc.edit.cardAttachmentsFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardCommentFrame#init                 18,0          18          18         0,0           1
+df$SimpleDoc.edit.cardCommentFrame#inject                0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardCommentFrame#loadDescriptor        16,0          16          16         0,0           1
+df$SimpleDoc.edit.cardCommentFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardCommentFrame@commentDs            40,0          11          69        29,0           2
+df$SimpleDoc.edit.cardLinksFrame#init                    0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardLinksFrame#inject                  0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardLinksFrame#loadDescriptor         33,0          33          33         0,0           1
+df$SimpleDoc.edit.cardLinksFrame#uiPermissions           0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardProcFrame#init                    28,0          28          28         0,0           1
+df$SimpleDoc.edit.cardProcFrame#inject                   1,0           1           1         0,0           1
+df$SimpleDoc.edit.cardProcFrame#loadDescriptor         113,0         113         113         0,0           1
+df$SimpleDoc.edit.cardProcFrame#uiPermissions            0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardProcFrame.cardRolesFrame#companion         2,0           2           2         0,0           1
+df$SimpleDoc.edit.cardProcFrame.cardRolesFrame#init         0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardProcFrame.cardRolesFrame#inject         2,0           2           2         0,0           1
+df$SimpleDoc.edit.cardProcFrame.cardRolesFrame#loadDescriptor        79,0          79          79         0,0           1
+df$SimpleDoc.edit.cardProcFrame.cardRolesFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardProcFrame@procDs                  66,0          66          66         0,0           1
+df$SimpleDoc.edit.cardProjectsFrame#init                21,0          21          21         0,0           1
+df$SimpleDoc.edit.cardProjectsFrame#inject               0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardProjectsFrame#loadDescriptor        57,0          57          57         0,0           1
+df$SimpleDoc.edit.cardProjectsFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardTreeFrame#init                     6,0           6           6         0,0           1
+df$SimpleDoc.edit.cardTreeFrame#inject                   0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardTreeFrame#loadDescriptor          67,0          67          67         0,0           1
+df$SimpleDoc.edit.cardTreeFrame#uiPermissions            0,0           0           0         0,0           1
+df$SimpleDoc.edit.cardTreeFrame@cardTreeDs               0,0           0           0         0,0           1
+df$SimpleDoc.edit.correspondenceHistoryFrame#init         0,0           0           0         0,0           1
+df$SimpleDoc.edit.correspondenceHistoryFrame#inject         0,0           0           0         0,0           1
+df$SimpleDoc.edit.correspondenceHistoryFrame#loadDescriptor        28,0          28          28         0,0           1
+df$SimpleDoc.edit.correspondenceHistoryFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.docOfficeFrame#init                    0,0           0           0         0,0           1
+df$SimpleDoc.edit.docOfficeFrame#inject                  0,0           0           0         0,0           1
+df$SimpleDoc.edit.docOfficeFrame#loadDescriptor        208,0         208         208         0,0           1
+df$SimpleDoc.edit.docOfficeFrame#uiPermissions           0,0           0           0         0,0           1
+df$SimpleDoc.edit.docOfficeFrame.docOfficeDataFrame#init         0,0           0           0         0,0           1
+df$SimpleDoc.edit.docOfficeFrame.docOfficeDataFrame#inject         2,0           2           2         0,0           1
+df$SimpleDoc.edit.docOfficeFrame.docOfficeDataFrame#loadDescriptor       183,0         183         183         0,0           1
+df$SimpleDoc.edit.docOfficeFrame.docOfficeDataFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.docTransferLogFrame#init               7,0           7           7         0,0           1
+df$SimpleDoc.edit.docTransferLogFrame#inject             1,0           1           1         0,0           1
+df$SimpleDoc.edit.docTransferLogFrame#loadDescriptor        21,0          21          21         0,0           1
+df$SimpleDoc.edit.docTransferLogFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.header#loadDescriptor                 61,0          61          61         0,0           1
+df$SimpleDoc.edit.openHistoryFrame#init                  0,0           0           0         0,0           1
+df$SimpleDoc.edit.openHistoryFrame#inject                0,0           0           0         0,0           1
+df$SimpleDoc.edit.openHistoryFrame#loadDescriptor        21,0          21          21         0,0           1
+df$SimpleDoc.edit.openHistoryFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.resolutionsFrame#init                  7,0           7           7         0,0           1
+df$SimpleDoc.edit.resolutionsFrame#inject                0,0           0           0         0,0           1
+df$SimpleDoc.edit.resolutionsFrame#loadDescriptor        48,0          48          48         0,0           1
+df$SimpleDoc.edit.resolutionsFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.resolutionsFrame@resolutionsDs        43,0          43          43         0,0           1
+df$SimpleDoc.edit.runtimePropertiesFrameMain#inject         1,0           1           1         0,0           1
+df$SimpleDoc.edit.runtimePropertiesFrameTab#inject         0,0           0           0         0,0           1
+df$SimpleDoc.edit.startProcessButtonsFrame#init          0,0           0           0         0,0           1
+df$SimpleDoc.edit.startProcessButtonsFrame#inject         1,0           1           1         0,0           1
+df$SimpleDoc.edit.startProcessButtonsFrame#loadDescriptor         6,0           6           6         0,0           1
+df$SimpleDoc.edit.startProcessButtonsFrame#uiPermissions         0,0           0           0         0,0           1
+df$SimpleDoc.edit.templateFrame#loadDescriptor          32,0          32          32         0,0           1
+df$SimpleDoc.edit@attachmentsDs                         31,0          31          31         0,0           1
+df$SimpleDoc.edit@cardRelationsDs                       41,0          41          41         0,0           1
+df$SimpleDoc.edit@categoriesDs                          14,0          14          14         0,0           1
+df$SimpleDoc.edit@categoryDs                            15,0          15          15         0,0           1
+df$SimpleDoc.edit@departmentDs                          16,0          16          16         0,0           1
+df$SimpleDoc.edit@docCopyReceiverDs                      4,0           4           4         0,0           1
+df$SimpleDoc.edit@docReceiverDs                          3,0           3           3         0,0           1
+df$SimpleDoc.edit@docSenderDs                           19,0          19          19         0,0           1
+df$SimpleDoc.edit@organizationDs                        12,0          12          12         0,0           1
+df$SimpleDoc.edit@versionsDs                            34,0          34          34         0,0           1
+docCreator#init                                        144,0         144         144         0,0           1
+docCreator#inject                                        1,0           1           1         0,0           1
+docCreator#loadDescriptor                              109,0         109         109         0,0           1
+docCreator#ready                                         0,0           0           0         0,0           1
+docCreator#uiPermissions                                 0,0           0           0         0,0           1
+docCreator#xml                                           8,0           8           8         0,0           1
+docCreator.windowActions#loadDescriptor                 27,0          27          27         0,0           1
+docCreator@docKindDs                                    26,0          26          26         0,0           1
+docCreator@templatesDs                                  19,5          19          20         0,5           2
+docOfficeDataFrame#xml                                  14,0          14          14         0,0           1
+docOfficeFrame#xml                                       7,0           7           7         0,0           1
+docTransferLogFrame#xml                                  3,0           3           3         0,0           1
+header#xml                                               4,0           4           4         0,0           1
+mainWindow#init                                        272,0         272         272         0,0           1
+mainWindow#inject                                       19,0          19          19         0,0           1
+mainWindow#loadDescriptor                              488,0         488         488         0,0           1
+mainWindow#ready                                         0,0           0           0         0,0           1
+mainWindow#uiPermissions                                 0,0           0           0         0,0           1
+mainWindow#xml                                         102,0         102         102         0,0           1
+openHistoryFrame#xml                                     4,0           4           4         0,0           1
+resolutionsFrame#xml                                     3,0           3           3         0,0           1
+runtimePropertiesFrameMain#init                          6,0           6           6         0,0           1
+runtimePropertiesFrameMain#uiPermissions                 0,0           0           0         0,0           1
+runtimePropertiesFrameMain#xml                           3,0           3           3         0,0           1
+runtimePropertiesFrameTab#init                           0,0           0           0         0,0           1
+runtimePropertiesFrameTab#uiPermissions                  0,0           0           0         0,0           1
+runtimePropertiesFrameTab#xml                            3,0           3           3         0,0           1
+startProcessButtonsFrame#xml                             2,0           2           2         0,0           1
+templateFrame#xml                                        3,0           3           3         0,0           1
+tezisdirectory$CostArticle.lookup#init                   0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#inject                 0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#loadDescriptor       170,0         170         170         0,0           1
+tezisdirectory$CostArticle.lookup#ready                  0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#uiPermissions          0,0           0           0         0,0           1
+tezisdirectory$CostArticle.lookup#xml                    4,0           4           4         0,0           1
+tezisdirectory$CostArticle.lookup@costArticleDs         14,0          14          14         0,0           1
+windowActions#xml                                        4,0           4           4         0,0           1
+
+Performance Statistics   2017-03-28 15:38:00 - 2017-03-28 15:40:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:40:00 - 2017-03-28 15:42:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+tezisdirectory$CostArticle.lookup#init                   0,0           0           0         0,0           2
+tezisdirectory$CostArticle.lookup#inject                 0,0           0           0         0,0           2
+tezisdirectory$CostArticle.lookup#loadDescriptor        14,5          13          16         1,5           2
+tezisdirectory$CostArticle.lookup#ready                  0,0           0           0         0,0           2
+tezisdirectory$CostArticle.lookup#uiPermissions          0,0           0           0         0,0           2
+tezisdirectory$CostArticle.lookup#xml                    7,5           6           9         1,5           2
+tezisdirectory$CostArticle.lookup@costArticleDs          5,5           5           6         0,5           2
+
+Performance Statistics   2017-03-28 15:42:00 - 2017-03-28 15:44:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:44:00 - 2017-03-28 15:46:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:46:00 - 2017-03-28 15:48:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:48:00 - 2017-03-28 15:50:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:50:00 - 2017-03-28 15:52:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:52:00 - 2017-03-28 15:54:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2017-03-28 15:54:00 - 2017-03-28 15:56:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+

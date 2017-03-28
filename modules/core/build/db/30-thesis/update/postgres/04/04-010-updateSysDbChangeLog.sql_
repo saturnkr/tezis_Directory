@@ -1,0 +1,6 @@
+
+update SYS_DB_CHANGELOG set script_name = '30-thesis/update/postgres/04/04-100-addTypeToContractorAccount.sql', is_init=1
+where script_name = '30-thesis/update/postgres/04/04-290-addTypeToContractorAccount.sql'^
+
+update SYS_DB_CHANGELOG set script_name = '30-thesis/update/postgres/04/04-110-addDocOfficeData.sql' , is_init=1 
+where script_name = '30-thesis/update/postgres/04/04-360-addDocOfficeData.sql'^

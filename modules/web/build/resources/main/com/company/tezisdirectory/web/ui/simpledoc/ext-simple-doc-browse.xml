@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.tezisdirectory.web.ui.simpledoc.ExtSimpleDocBrowser"
+        extends="com/haulmont/thesis/web/ui/simpledoc/simple-doc-browse.xml"
+        messagesPack="com.company.tezisdirectory.web.ui.simpledoc">
+    <dsContext>
+        <groupDatasource id="cardsDs"
+                         class="com.company.tezisdirectory.entity.ExtSimpleDoc"
+                         view="ext-browse"/>
+    </dsContext>
+    <layout>
+        <vbox>
+            <split id="split">
+                <vbox id="table-panel">
+                    <groupTable id="cardsTable">
+                        <columns>
+                            <column id="costart"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </split>
+        </vbox>
+    </layout>
+</window>

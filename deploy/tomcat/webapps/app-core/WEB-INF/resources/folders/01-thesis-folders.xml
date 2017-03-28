@@ -1,0 +1,410 @@
+<folders xmlns="http://schemas.haulmont.com/thesis/4.0/folders.xsd">
+
+    <!-- Tasks folders-->
+
+    <folder>
+        <name>AppFolder_task.tasks</name>
+        <sortOrder>1</sortOrder>
+        <roles>
+            <role>task_initiator</role>
+            <role>task_executor</role>
+            <role>task_controller</role>
+            <role>task_observer</role>
+            <role>task_creator</role>
+        </roles>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.new</name>
+        <sortOrder>1</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_creator</role>
+        </roles>
+        <quantityScript>com/haulmont/thesis/core/appfolders/task/NewQty.groovy</quantityScript>
+        <filterQuery>{E}.substitutedCreator.id = :session$userId and {E}.state = ',New,'</filterQuery>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.notCompleted</name>
+        <sortOrder>2</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_initiator</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>TaskManagement</process>
+                <states>
+                    <state>NotCompleted</state>
+                    <state>Refused</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.assigned</name>
+        <sortOrder>3</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_executor</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>TaskManagement</process>
+                <states>
+                    <state>Assigned</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.inWork</name>
+        <sortOrder>4</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_executor</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>TaskManagement</process>
+                <states>
+                    <state>InWork</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.inControl</name>
+        <sortOrder>5</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_initiator</role>
+            <role>task_controller</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>TaskManagement</process>
+                <states>
+                    <state>Completed</state>
+                    <state>InControl</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.observed</name>
+        <sortOrder>6</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.tasks</parent>
+        <roles>
+            <role>task_observer</role>
+        </roles>
+        <quantityScript>com/haulmont/thesis/core/appfolders/task/ObservedQty.groovy</quantityScript>
+        <filterJoin>join {E}.roles cr</filterJoin>
+        <filterQuery>(t.state not in (',Finished,', ',Canceled,',',FinishedByInitiator,',',New,') OR t.state is null)
+            and cr.user.id=:session$userId and cr.code='90-Observer'
+        </filterQuery>
+        <conditions>
+            <condition>
+                <process>TaskManagement</process>
+                <states>
+                    <state>Completed</state>
+                    <state>InControl</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <!-- Docs folders-->
+
+    <folder>
+        <name>AppFolder_doc.docs</name>
+        <sortOrder>2</sortOrder>
+        <roles>
+            <role>doc_initiator</role>
+            <role>doc_endorsement</role>
+            <role>doc_approver</role>
+            <role>doc_acquaintance</role>
+        </roles>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.new</name>
+        <sortOrder>1</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.docs</parent>
+        <roles>
+            <role>doc_initiator</role>
+        </roles>
+        <quantityScript>com/haulmont/thesis/core/appfolders/doc/NewQty.groovy</quantityScript>
+        <filterQuery>{E}.substitutedCreator.id = :session$userId and {E}.state is null and {E}.template = false and
+            {E}.versionOf is null and {E}.registered = false
+        </filterQuery>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.endorsement</name>
+        <sortOrder>2</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.docs</parent>
+        <roles>
+            <role>doc_endorsement</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Endorsement</process>
+                <states>
+                    <state>Endorsement</state>
+                    <state>EndorsementSeq</state>
+                </states>
+            </condition>
+            <condition>
+                <process>EndorsementFull</process>
+                <states>
+                    <state>Endorsement</state>
+                    <state>EndorsementSeq</state>
+                </states>
+            </condition>
+            <condition>
+                <process>ProtocolEndorsement</process>
+                <states>
+                    <state>Endorsement</state>
+                    <state>EndorsementSeq</state>
+                </states>
+            </condition>
+            <condition>
+                <process>AgendaEndorsement</process>
+                <states>
+                    <state>Endorsement</state>
+                    <state>EndorsementSeq</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.improvement</name>
+        <sortOrder>3</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.docs</parent>
+        <roles>
+            <role>doc_initiator</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Endorsement</process>
+                <states>
+                    <state>Improvement</state>
+                </states>
+            </condition>
+            <condition>
+                <process>EndorsementFull</process>
+                <states>
+                    <state>Improvement</state>
+                </states>
+            </condition>
+            <condition>
+                <process>ProtocolEndorsement</process>
+                <states>
+                    <state>Improvement</state>
+                </states>
+            </condition>
+            <condition>
+                <process>AgendaEndorsement</process>
+                <states>
+                    <state>Improvement</state>
+                </states>
+            </condition>
+            <condition>
+                <process>Registration</process>
+                <states>
+                    <state>NotCompleted</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.approval</name>
+        <sortOrder>4</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.docs</parent>
+        <roles>
+            <role>doc_approver</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Endorsement</process>
+                <states>
+                    <state>Approval</state>
+                </states>
+            </condition>
+            <condition>
+                <process>EndorsementFull</process>
+                <states>
+                    <state>Approval</state>
+                </states>
+            </condition>
+            <condition>
+                <process>ProtocolEndorsement</process>
+                <states>
+                    <state>Approval</state>
+                </states>
+            </condition>
+            <condition>
+                <process>AgendaEndorsement</process>
+                <states>
+                    <state>Approval</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.acquaintance</name>
+        <sortOrder>5</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.docs</parent>
+        <roles>
+            <role>doc_acquaintance</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Acquaintance</process>
+                <states>
+                    <state>Acquaintance</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <!-- Office folders-->
+
+    <folder>
+        <name>AppFolder_doc.office</name>
+        <sortOrder>4</sortOrder>
+        <roles>
+            <role>doc_initiator</role>
+            <role>doc_secretary</role>
+            <role>doc_approver</role>
+        </roles>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.streamRegistration</name>
+        <sortOrder>1</sortOrder>
+        <filterComponentId>streamRegistration</filterComponentId>
+        <parent>AppFolder_doc.office</parent>
+        <quantityScript>com/haulmont/thesis/core/appfolders/doc/StreamRegistrationQty.groovy</quantityScript>
+        <visibilityScript>com/haulmont/thesis/core/appfolders/doc/StreamRegistrationVisible.groovy</visibilityScript>
+    </folder>
+
+
+    <folder>
+        <name>AppFolder_doc.registration</name>
+        <sortOrder>2</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.office</parent>
+        <roles>
+            <role>doc_secretary</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Registration</process>
+                <states>
+                    <state>Registration</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.resolution</name>
+        <sortOrder>3</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.office</parent>
+        <roles>
+            <role>doc_approver</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Resolution</process>
+                <states>
+                    <state>Resolution</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <folder>
+        <name>AppFolder_doc.resolutionProcessing</name>
+        <sortOrder>4</sortOrder>
+        <entity>df$Doc</entity>
+        <parent>AppFolder_doc.office</parent>
+        <roles>
+            <role>doc_initiator</role>
+        </roles>
+        <conditions>
+            <condition>
+                <process>Resolution</process>
+                <states>
+                    <state>ResolutionProcessing</state>
+                </states>
+            </condition>
+        </conditions>
+    </folder>
+
+    <!-- Department folders-->
+
+    <folder>
+        <name>AppFolder_task.MyDepartment</name>
+        <sortOrder>9</sortOrder>
+        <roles>
+            <role>DepartmentChief</role>
+            <role>SubdivisionChief</role>
+        </roles>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.ActiveTasksDivisionChief</name>
+        <sortOrder>1</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.MyDepartment</parent>
+        <visibilityScript>com/haulmont/thesis/core/appfolders/task/DivisionChiefVisible.groovy</visibilityScript>
+        <quantityScript>com/haulmont/thesis/core/appfolders/task/DivisionChiefQty.groovy</quantityScript>
+        <filterJoin>join {E}.roles r</filterJoin>
+        <filterQuery>r.code = '20-Executor' and not ({E}.state like '%,Finished,%')
+            and not ({E}.state like '%,Canceled,%') and not ({E}.state like '%,New,%') and not ({E}.state like '%,Completed,%')
+            AND {E}.state is not null and not ({E}.state like '%,Refused,%') and not ({E}.state like '%,DelayedStart,%')
+            and not ({E}.state like '%,FinishedByInitiator,%') and r.user.id in (:session$departmentMembersIds)
+        </filterQuery>
+    </folder>
+
+    <folder>
+        <name>AppFolder_task.ActiveTasksDepartmentChief</name>
+        <sortOrder>1</sortOrder>
+        <entity>tm$Task</entity>
+        <parent>AppFolder_task.MyDepartment</parent>
+        <roles>
+            <role>DepartmentChief</role>
+        </roles>
+        <quantityScript>com/haulmont/thesis/core/appfolders/task/DepartmentChiefQty.groovy</quantityScript>
+        <filterJoin>join {E}.roles r</filterJoin>
+        <filterQuery>r.code = '20-Executor' and not ({E}.state like '%,Finished,%')
+            and not ({E}.state like '%,Canceled,%') and not ({E}.state like '%,New,%') and not ({E}.state like '%,Completed,%')
+            AND {E}.state is not null and not ({E}.state like '%,Refused,%') and not ({E}.state like '%,DelayedStart,%')
+            and not ({E}.state like '%,FinishedByInitiator,%') and r.user.id in (:session$departmentMembersIds)
+        </filterQuery>
+    </folder>
+
+</folders>

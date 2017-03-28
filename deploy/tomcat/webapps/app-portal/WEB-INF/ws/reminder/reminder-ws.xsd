@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://www.haulmont.com/schema/thesis/reminder"
+        targetNamespace="http://www.haulmont.com/schema/thesis/reminder"
+        attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+    <!--Echo-->
+
+    <xs:element name="EchoRequest">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="([A-Z]|[a-z])+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="EchoResponse" type="xs:string"/>
+
+    <!--GetAuthType-->
+
+    <xs:element name="GetAuthTypeRequest"/>
+
+    <xs:element name="GetAuthTypeResponse">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="STD"/>
+                <xs:enumeration value="AD"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--IsAddAttachEnable-->
+
+    <xs:element name="ValidationAttachActionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+                <xs:element type="xs:string" name="attachId"/>
+                <xs:element type="xs:string" name="cardId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ValidationAttachActionResponse" type="xs:string"/>
+
+    <!--GetMaxFileSize-->
+
+    <xs:element name="GetMaxFileSizeRequest"/>
+
+    <xs:element name="GetMaxFileSizeResponse" type="xs:string"/>
+
+    <!--GetCryptType-->
+
+    <xs:element name="GetCryptTypeRequest"/>
+
+    <xs:element name="GetCryptTypeResponse">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="SHA"/>
+                <xs:enumeration value="MD5"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--GetReminderVersion-->
+
+    <xs:element name="GetReminderVersionRequest"/>
+
+    <xs:element name="GetReminderVersionResponse" type="xs:string"/>
+
+    <!--Login-->
+
+    <xs:element name="LoginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="login"/>
+                <xs:element type="xs:string" name="password"/>
+                <xs:element type="xs:string" name="locale"/>
+                <xs:element type="xs:string" name="address"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LoginResponse" type="xs:string"/>
+
+    <!--Logout-->
+
+    <xs:element name="LogoutRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--CreateTask-->
+
+    <xs:element name="CreateTaskRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+                <xs:element type="xs:string" name="metaName"/>
+                <xs:element name="values">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="value" type="objectType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="files">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="file" type="fileType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateTaskResponse" type="xs:string"/>
+
+    <!--IsPermittedEntity-->
+
+    <xs:element name="IsPermittedEntityRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+                <xs:element type="xs:string" name="target"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="IsPermittedEntityResponse" type="xs:string"/>
+
+    <!--IsMainAttachment-->
+
+    <xs:element name="IsCreateNewAttachmentFromAttachmentEnabledRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+                <xs:element type="xs:string" name="entityId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="IsCreateNewAttachmentFromAttachmentEnabledResponse" type="xs:string"/>
+
+    <!--IsUserCanSelectMainAttachments-->
+
+    <xs:element name="IsUserCanSelectMainAttachmentsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+                <xs:element type="xs:string" name="entityId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="IsUserCanSelectMainAttachmentsResponse" type="xs:string"/>
+
+    <!--GetAllowCardTypes-->
+
+    <xs:element name="GetAllowCardTypesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="sessionId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllowCardTypesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cardType" type="allowCardType" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--GetInfo-->
+
+    <xs:element name="GetInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="firstCardInfoNumber" type="xs:string" maxOccurs="1"
+                            minOccurs="0"/>
+                <xs:element name="maxCardCount" type="xs:string" maxOccurs="1"
+                            minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="notifications">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="notification" type="notificationType" maxOccurs="unbounded"
+                                        minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="countCardInfo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--CreateEntity-->
+
+    <xs:element name="CreateEntityRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="fields">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="field" type="fieldType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateEntityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entityId" type="xs:string"/>
+                <xs:element name="url" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--LoadEntity-->
+
+    <xs:element name="LoadEntityRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="entityId" type="xs:string"/>
+                <xs:element name="fields">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="field" type="simpleFieldType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LoadEntityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entity" type="entityType" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--LoadListEntities-->
+
+    <xs:element name="LoadListEntitiesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="fields">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="field" type="simpleFieldType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="field" type="fieldType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LoadListEntitiesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entity" type="entityType" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--SaveEntity-->
+
+    <xs:element name="SaveEntityRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="entityId" type="xs:string"/>
+                <xs:element name="fields">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="field" type="fieldType" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SaveEntityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entityId" type="xs:string"/>
+                <xs:element name="url" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--GetBarcode-->
+
+    <xs:element name="GetBarcodeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="entityId" type="xs:string"/>
+                <xs:element name="cardId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetBarcodeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="barcode" type="xs:base64Binary"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--IsTaskFinished-->
+    <xs:element name="IsTaskFinishedRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="entityName" type="xs:string"/>
+                <xs:element name="fileId" type="xs:string"/>
+                <xs:element name="cardId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="IsTaskFinishedResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isFinished" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Assistant-->
+    <xs:element name="OfficeActionsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="actionName" type="xs:string"/>
+                <xs:element name="statusName" type="xs:string"/>
+                <xs:element name="statusValue" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="OfficeActionsResponse" type="xs:string"/>
+
+    <!--Remove card info-->
+
+    <xs:element name="RemoveCardInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="cardInfoId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RemoveCardInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isSuccess" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Types for work Entity-->
+
+    <xs:complexType name="simpleFieldType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="fieldType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="entityType">
+        <xs:sequence>
+            <xs:element name="fields">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="field" type="fieldType" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="optional"/>
+        <xs:attribute name="url" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!--GetPublicKey-->
+
+    <xs:element name="GetPublicKeyRequest"/>
+
+    <xs:element name="GetPublicKeyResponse" type="xs:string"/>
+
+    <!-- Other types-->
+
+    <xs:complexType name="notificationType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:dateTime"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="card" type="cardType"/>
+            <xs:element name="user" type="userType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="optional"/>
+        <xs:attribute name="activity" type="xs:string" use="optional"/>
+        <xs:attribute name="status" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="cardType">
+        <xs:sequence>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="url" type="xs:anyURI"/>
+        </xs:sequence>
+        <xs:attribute name="comment" type="xs:string"/>
+        <xs:attribute name="state" type="xs:string"/>
+        <xs:attribute name="id" type="xs:string" use="optional"/>
+        <xs:attribute name="finishDatePlan" type="xs:dateTime" use="optional"/>
+
+    </xs:complexType>
+
+    <xs:complexType name="userType">
+        <xs:sequence>
+            <xs:element name="login" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="objectType">
+        <xs:sequence>
+            <xs:element name="data" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+        <xs:attribute name="type" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="fileType">
+        <xs:sequence>
+            <xs:element name="data" type="xs:base64Binary"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="allowCardType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="allowCreate" type="xs:boolean" use="optional"/>
+        <xs:attribute name="allowUpdate" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

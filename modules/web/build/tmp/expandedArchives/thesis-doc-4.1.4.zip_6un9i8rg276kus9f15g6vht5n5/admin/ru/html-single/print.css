@@ -1,0 +1,612 @@
+﻿@page {
+    size: A4;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    margin: 0; /* Чтобы обнулить отступы и поля у всех элементов на странице */
+	margin-left: 10px;
+	margin-right: 5px;
+    padding: 0;
+}
+
+/*footers and headers*/
+@page contentpage {
+	margin-bottom: 2.2cm;
+	margin-top: 3cm;
+    /*@bottom-left {
+        /*content: 'Система управления документами и задачами ТЕЗИС™. Руководство пользователя. Расширенная редакция';
+		content: 'Система управления документами и задачами ТЕЗИС™. Руководство по разработке расширений';*/
+     /*   font-family: 'Arial', 'Verdana', sans-serif;
+        font-size: 12pt;
+        color: #777777;
+        padding-bottom: 1.2cm;
+        vertical-align: bottom;
+    };*/
+	/*@bottom-left {
+        content: 'стр. ' counter(page) ' из ' counter(pages);
+        font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans','Geneva','Verdana',sans-serif;
+        font-size: 10pt;
+        color: #777777;
+        padding-bottom: 1.2cm;
+        vertical-align: bottom;
+    };*/
+	@bottom-right {
+        content: 'стр. ' counter(page) ' из ' counter(pages);
+        font-family: 'Arial', 'Verdana', sans-serif;
+        font-size: 12pt;
+        color: #777777;
+        padding-bottom: 1cm;
+        vertical-align: bottom;
+    };
+	@top-left {	
+	    content: ' 443090, Россия, Самара, ул. Гастелло, 43А тел.: +7(846) 373-94-87, факс: +7(846) 373-94-89 www.haulmont.ru, info@haulmont.com';
+		font-family: 'Arial', 'Verdana', sans-serif;
+		font-size: 10pt;
+		color: #4C4C4C;
+		text-align: right;
+		padding-left: 380px; /* отступ для реквизитов */
+        padding-top: 0.8cm;
+        vertical-align: top;
+		background-image: url(img/logoMin.png);
+		background-repeat: no-repeat;
+		background-position: left;
+    };
+	/*@top-right {
+	    content: 
+		font-family: 'Arial', 'Verdana', sans-serif;
+        font-size: 10pt;
+        color: #777777;
+        padding-bottom: 1.2cm;
+        vertical-align: bottom;*/
+    };
+}
+
+body {
+    font-size: 12pt;
+    margin: 0;
+    margin-bottom: 2cm;
+	margin-left: 2cm;
+	margin-right: 1cm;
+    padding: 0;
+    padding-bottom: 1cm;
+}
+
+/*
+ * Override colour -> black and white*/
+ 
+body, div, td {
+    color: black;
+}
+
+p {
+    text-align: justify; /* выравнивание текста*/
+	line-height: 1.5; /* межстрочный интервал */
+	margin-bottom: 6pt; /* задаем расстояние между абзацами */
+	margin-top: 6pt;
+}
+
+/* оформление href*/
+a {
+	text-decoration: none;
+    color: black;
+}
+
+/*
+ * Titlepages
+ */
+ 
+.book .titlepage {
+    padding: 0;
+    margin: 0;
+    background-image: url(img/HaulmontLogoMax.png);
+	background-size: 100%;
+	background-position: bottom;
+	/*page: contentpage;*/
+}
+
+.preface .titlepage {
+    background-image: none;
+}
+.simplesect.titlepage {
+    page-break-after: avoid;
+}
+.section .titlepage {
+    background-image: none;
+	page-break-after: avoid;
+	/*page-break-before: avoid;*/
+}
+.chapter .titlepage {
+    background-image: none;
+}
+
+.appendix .titlepage {
+    background-image: none;
+	margin-bottom: 4em;
+}
+
+.glossary .titlepage {
+    background-image: none;
+}
+
+.titlepage .releaseinfo {
+    margin-top: 50%;
+    font-size: 180%;
+    color: black;
+}
+
+.titlepage .copyright{
+	text-align=center;
+	margin-top: 70%;
+}
+
+.book.bookinfo .copyright{
+	text-align=center;
+	margin-top: 40%;
+}
+
+.copyright p{
+    text-align=center;
+}
+
+/*
+ * Titles
+ */
+
+.titlepage h1.title {
+    /*font-size: 360%;*/
+	font-size: 26pt;
+	margin-bottom: 15px;
+	text-align: left; /* выравнивание текста*/
+}
+
+.titlepage#ttp h1.title {
+    margin: 150px 0;
+    padding-top: 160px;
+    margin-bottom: 20px;
+    color: Black;
+    text-indent: 3em; /* Отступ первой строки */
+}
+
+.titlepage#adm h1.title {
+    margin: 150px 0;
+    padding-top: 160px;
+    margin-bottom: 50px;
+    color: Black;
+    text-indent: 3em; /* Отступ первой строки */
+}
+
+.titlepage#extdev h1.title {
+    margin: 150px 0;
+    padding-top: 160px;
+    margin-bottom: 40px;
+    color: Black;
+    text-indent: 3em; /* Отступ первой строки */
+}
+
+.titlepage#port h1.title {
+    margin: 150px 0;
+    padding-top: 160px;
+    margin-bottom: 100px;
+    color: Black;
+    text-indent: 3em; /* Отступ первой строки */
+}
+
+.titlepage h2.subtitle {
+	font-size: 18pt;
+    /*font-size: 240%;*/
+	padding: 0;
+    margin-top: 0;
+	/*margin-bottom: 25px;*/
+    color: Black;
+}
+
+.book .titlepage div.title {
+    text-align: left;
+    /* page-break-after: avoid;*/
+    border: none;
+    margin: 0;
+	padding: 0;
+    /*padding-top: 0;
+    padding-left: 0;
+    padding-right: 5%;
+    padding-bottom: 0;*/
+}
+
+.chapter > .titlepage h1 {
+    /*font-size: 240%;*/
+	font-size: 16pt;
+    text-align: left;
+}
+
+.chapter > .titlepage h2 {
+    /*font-size: 300%;*/
+	font-size: 18pt;
+    text-align: left;
+}
+
+.preface > .titlepage h1 {
+    /*font-size: 240%;*/
+	font-size: 16pt;
+    text-align: left;
+}
+
+.preface > .titlepage h2 {
+    /*font-size: 300%;*/
+	font-size: 18pt;
+    text-align: left;
+}
+
+.appendix > .titlepage h1 {
+    /*font-size: 240%;*/
+	font-size: 16pt;
+    text-align: left;
+}
+
+.appendix > .titlepage h2 {
+    /*font-size: 400%;*/
+	font-size: 18pt;
+    text-align: left;
+}
+
+.section > .titlepage h2 {
+    /*font-size: 400%;*/
+	font-size: 16pt;
+}
+
+.section > .titlepage h3 {
+    /*font-size: 400%;*/
+	font-size: 14pt;
+}
+
+.section > .titlepage h4 {
+    /*font-size: 400%;*/
+	font-size: 12pt;
+}
+
+/* убираем поля и отступы глав*/
+.book .chapter { 
+	margin: 0;
+	padding:0;
+}
+.chapter  *{ 
+    margin-left: 0;
+}
+.preface *{ 
+    margin-left: 0;
+}
+/*добавляем необ отступы*/
+.chapter > .titlepage {
+	margin-bottom: 1em;
+	margin-top: 0;	
+}
+.section > .titlepage  {
+    margin-bottom: 1em;
+	margin-top: 1em;	
+}
+.simplesect > .titlepage  {
+    margin-bottom: 0.5em;
+	margin-top: 0.5em;	
+}
+/*TOC*/
+
+.toc {
+	/*Верхний колонтитул и нумерация страниц для оглавления*/
+	page: contentpage;
+}
+
+/* Добавляет точки и номер страницы в оглавлении */ 
+a.toc-entry:after { content: leader('.') target-counter(attr(href), page); }
+
+.toc * {
+    line-height: 130%;
+    margin-right: 0px;
+}
+
+.toc p{
+    /*font-size: 180%;*/
+	font-size: 18pt;
+	color: #0b6ec7;
+	/*content: counter(page);*/
+}
+/* убираем лишние поля и отступы*/
+.book .toc {
+    margin: 0;
+	padding:0;
+}
+
+/**
+ * Chapter and Appendix title page
+ */
+
+.chapter {
+    page: contentpage;
+    page-break-before: always;
+}
+
+.preface {
+    page: contentpage;
+    page-break-before: always;
+}
+
+.appendix {
+    page: contentpage;
+    page-break-before: always;
+}
+
+.glossary {
+    page: contentpage;
+    page-break-before: always;
+}
+
+.glossdiv {
+    page-break-after: auto;
+}
+
+/**
+ * Examples,notes, tips, figures
+ */
+
+.example .title, .figure .title {
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Arial', 'Verdana', sans-serif;
+	font-size: 10pt;
+    color: #000000;
+}
+
+.example, .figure {
+    page-break-inside: avoid;
+}
+.figure *{
+    margin: 0;
+	padding:0;
+}
+
+.figure img {
+    /*max-width: 100%; */
+	/*max-height: auto;*/
+	padding-top: 10px;
+}
+.caution.para {
+    page-break-inside: auto;
+}
+
+.programlisting {
+    page-break-inside: auto ;
+    font-size: 70%;
+	width: 90%;
+	white-space: pre-wrap;
+}
+
+.tip, .warning, .caution {
+    margin-left: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 87%;
+	page-break-inside: avoid;
+	white-space: pre-wrap;
+}
+
+.tip {
+    background: #FAF7F5;
+    border: solid #e2d2c9 1px;
+}
+
+.tip .title {
+    color: #403127;
+	font-size: 100%;
+}
+
+.warning {
+    background: #f8e8e8;
+    border: solid #e59595 1px;
+}
+.warning .title {
+    color: #661b1b;
+	font-size: 100%;
+}
+
+.caution {
+    background: #ecf2ff;
+    border: solid #4c72bf 1px;
+}
+.caution .title {
+    color: #26395f;
+	font-size: 100%;
+}
+
+/* Remove top margins on headings inside notes and tips */
+.tip h1, .note h1
+.tip h2, .note h2,
+.tip h3, .note h3,
+.tip h4, .note h4,
+.tip h5, .note h5,
+.tip h6, .note h6
+{
+   margin-top: 0;
+}
+
+/* Remove top margins on headings inside notes and tips */
+.caution h1, .warning h1, .IMPORTANT h1
+.caution h2, .warning h2, .IMPORTANT h2,
+.caution h3, .warning h3, .IMPORTANT h3,
+.caution h4, .warning h4, .IMPORTANT h4,
+.caution h5, .warning h5, .IMPORTANT h5,
+.caution h6, .warning h6, .IMPORTANT h6
+{
+   margin-top: 0;
+}
+
+/*DocBook elements*/
+
+.itemizedlist {
+    padding-left: 20px;
+    page-break-inside: auto;
+}
+.orderedlist {
+    padding-left: 20px;
+    page-break-inside: auto;
+}
+.filename {
+	white-space: pre-wrap;
+}
+
+.screen {
+    page-break-inside: avoid;
+    font-size: 90%;
+}
+
+.guibutton {
+	background-color: #e7e7e7;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0.2px;
+	padding-bottom: 0.2px;
+	margin: 0;
+	/*padding:0;*/
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	border-radius: 4px;
+	border-color: #565656;
+	font-size: 100%;
+	white-space: pre-wrap;
+}
+
+.glossterm {
+	font-style: italic;
+	color: #1a334c;
+}
+
+.ulink
+{
+	border-bottom: 1px solid
+}
+
+.literal{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.informaltable {
+    page-break-inside: auto;
+}
+
+.userinput {
+    white-space: pre-wrap;
+}
+
+.prompt {
+    white-space: pre-line;
+}
+
+.programlisting a img, pre a img {
+    display:inline;
+    margin:0 0;
+}
+
+.warning, .important{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    /*margin-bottom: 1em;
+	margin-left: 1em;
+	width: 85%;
+	margin-top: 1em;
+    margin-bottom: 1em;	
+	/*margin-left: 0;
+    margin-right: 0;*/
+	page-break-inside: avoid; /* Запрещает разрыв страницы внутри элемента. */
+}	
+
+/*
+ * Tables
+ */
+
+.informaltable table {
+    border-collapse: collapse;
+    font-size: 11pt;
+    min-width: 50%;
+    /*border: solid #2250bd 1px;*/
+	border: solid rgb(0,149,182) 0.5px;
+	page-break-inside: auto;
+}
+
+.informaltable table td {
+    text-align: center;
+    vertical-align: text-top;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+	font-size: 11pt;
+}
+
+.informaltable table thead td {
+    font-weight: bold;
+	font-size: 11pt;
+    /*border-bottom: solid #686868 2px;*/
+    background-color: #ffffff;
+}
+
+th.caption { background-color: rgb(11,110,199); 
+            color: #ffffff;} 
+			
+th.bord { border-right: solid #ffffff 0.5px;
+         background-color: rgb(11,110,199); 
+         color: #ffffff;} 
+			
+td.special { background-color: rgb(157,197,232); 
+            border-bottom: solid #686868 1px;
+			border-top: solid #686868 1px;} 
+			
+td.left { background-color: rgb(157,197,232); 
+            border-left: solid #686868 1px;
+			border-bottom: solid #686868 1px;
+			border-top: solid #686868 1px;} 
+			
+td.right { background-color: rgb(157,197,232); 
+            border-right: solid #686868 1px;
+			border-bottom: solid #686868 1px;
+			border-top: solid #686868 1px;} 
+			
+/* убираем лишние отступы у ссылок*/			
+.xref  {
+    margin: 0;
+	padding:0;
+}	
+.link {
+    /*color: blue;*/
+	/*text-decoration: underline;*/
+	/*border-bottom:0.5px solid #3366ff;*/
+    margin: 0;
+	padding:0;
+}
+/* лишний пробел после emphasis и др. убираем с помощью отрицательного margin-right (на данный момент нашла только такое работающее решение)*/
+span.bold {
+	margin-right: -0.4em;
+} 
+span.red{
+	margin-right: -0.08em;
+}
+span.gray{
+	margin-right: -0.08em;
+}
+
+p.indent2{
+        text-indent: -4em;
+}
+
+/* , span.orange, span.green*/
+/*блочный элемент, который обтекается другими элементами (например: чтобы ссылка на рисунок переносилась вместе со скобкой)*/
+span.inline-block {   
+    display: inline-block;
+	margin-right: -0.08em;
+}	
+
+span.margin-left {   
+	margin-left: -0.3em;
+}

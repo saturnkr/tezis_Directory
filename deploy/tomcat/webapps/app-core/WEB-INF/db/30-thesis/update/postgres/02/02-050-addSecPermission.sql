@@ -1,0 +1,5 @@
+-- $Id: 02-050-addSecPermission.sql 1169 2010-11-25 09:49:38Z novikov $
+-- Description: df$Doc
+INSERT INTO sec_permission (id, create_ts, created_by, version, update_ts, updated_by, delete_ts, deleted_by, type, target, value, role_id) VALUES ('e75f3112-aa0c-4bac-8025-e5af579595f8', '2010-05-05 16:06:06.68', 'admin', 1, '2010-05-05 16:06:06.68', null, null, null, 20, 'df$Doc:delete', 1, '3c9abffb-2fae-484e-990c-343b3c1197ca')^
+INSERT INTO sec_permission (id, create_ts, created_by, version, update_ts, updated_by, delete_ts, deleted_by, type, target, value, role_id) VALUES ('e889f226-ddeb-4f7a-80fa-5f368ab6aa34', '2010-05-05 16:06:06.68', 'admin', 1, '2010-05-05 16:06:06.68', null, null, null, 20, 'df$Doc:create', 1, '3c9abffb-2fae-484e-990c-343b3c1197ca')^
+INSERT INTO sec_permission (id, create_ts, created_by, version, update_ts, updated_by, delete_ts, deleted_by, type, target, value, role_id) VALUES ('5b503fe4-aec9-4186-9271-bdc077315eb0', '2010-05-05 16:06:06.68', 'admin', 1, '2010-05-05 16:06:06.68', null, null, null, 20, 'df$Doc:update', 1, '3c9abffb-2fae-484e-990c-343b3c1197ca')^

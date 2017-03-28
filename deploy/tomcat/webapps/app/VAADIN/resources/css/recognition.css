@@ -1,0 +1,98 @@
+/*
+ * Copyright (c) 2011 Haulmont Technology Ltd. All Rights Reserved.
+ * Haulmont Technology proprietary and confidential.
+ * Use is subject to license terms.
+ */
+
+.rec-component .rec-button {
+    position:relative;
+    border: 0px;
+}
+
+.v-slot-rec-button.disabledButton {
+    display: none;
+}
+
+.rec-component .cuba-resizabletextarea-resize-corner {
+    bottom:-25px;
+}
+
+.v-slot.v-slot-rec-button {
+    float:right;
+    background-color:#ffffff;
+    width:100%;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color:#dadada;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.v-slot.v-slot-rec-text {
+    display: block;
+    overflow:visible;
+}
+
+.rec-text .v-textarea {
+    border-width: 1px 1px 0px 1px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.rec-text.disabledButton .v-textarea {
+    border-width: 1px 1px 1px 1px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.textarea-focus {
+    border-color: #4D7AB2;
+}
+
+.textarea-focusout {
+    border-color: #a5c4e0;
+}
+
+.rec-component .rec-button,
+.rec-component .rec-button:hover,
+.rec-component .rec-button:active {
+    float:right;
+    background:none;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    //width:13px;
+    //height:19px;
+    background-position-x:100%;
+}
+
+.rec-component .rec-button:focus:after {
+    box-shadow:none;
+}
+
+.rec-component .rec-button:hover:after,
+.rec-component .rec-button:active:after {
+    background:transparent;
+}
+
+.rec-component .rec-button-start,
+.rec-component .rec-button-start:hover,
+.rec-component .rec-button-start:active {
+    background-image: url('../img/rec_start.png');
+}
+
+.rec-component.v-horizontallayout-rec-component  {
+    overflow:visible;
+}
+
+.rec-component .rec-button-stop,
+.rec-component .rec-button-stop:hover,
+.rec-component .rec-button-stop:active {
+    background-image: url('../img/rec_stop.png');
+}
+
+.speak-div {
+    margin-right:15px;
+    color:#da5252;
+}

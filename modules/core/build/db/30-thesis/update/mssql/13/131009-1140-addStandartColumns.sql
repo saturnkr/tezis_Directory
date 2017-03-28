@@ -1,0 +1,16 @@
+--$Id: 131009-1140-addStandartColumns.sql 12497 2013-10-14 07:41:05Z zudin $
+--$Description:
+
+EXEC sp_rename 'DF_OFFICE_FILE_OFFICE_FILE_NOMENCLATURE', 'DF_OFFICE_FILE_NOMENCLATURE_RELATION';
+delete from sys_db_changelog where script_name like '%130929-1300-initDefault%';
+
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add ID uniqueidentifier;
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add CREATE_TS datetime ;
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add CREATED_BY varchar(50);
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add VERSION integer;
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add UPDATE_TS datetime;
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add UPDATED_BY varchar(50);
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add DELETE_TS datetime;
+alter table DF_OFFICE_FILE_NOMENCLATURE_RELATION add DELETED_BY varchar(50);
+
+update DF_OFFICE_FILE_NOMENCLATURE_RELATION set ID = newId();

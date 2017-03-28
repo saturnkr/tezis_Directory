@@ -1,0 +1,15 @@
+delete from WF_CALENDAR where WORK_DAY is not null;
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-01');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-02');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-05');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-06');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-07');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-08');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-01-09');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-02-23');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-03-09');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-05-01');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-05-04');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-05-11');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-06-12');
+insert into WF_CALENDAR (ID, CREATE_TS, CREATED_BY, WORK_DAY) values (newid(), now(), 'admin', '2015-11-04');

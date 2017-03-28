@@ -1,0 +1,8 @@
+rootProject.name = 'tezis_Directory'
+include(':tezisdirectory-global', ':tezisdirectory-core', ':tezisdirectory-gui', ':tezisdirectory-web', ':tezisdirectory-portal', ':tezisdirectory-mobile')
+project(':tezisdirectory-global').projectDir = new File(settingsDir, 'modules/global')
+project(':tezisdirectory-core').projectDir = new File(settingsDir, 'modules/core')
+project(':tezisdirectory-gui').projectDir = new File(settingsDir, 'modules/gui')
+project(':tezisdirectory-web').projectDir = new File(settingsDir, 'modules/web')
+project(':tezisdirectory-portal').projectDir = new File(settingsDir, 'modules/portal')
+project(':tezisdirectory-mobile').projectDir = new File(settingsDir, 'modules/mobile')

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">  
+  <persistence-unit name="tezis_Directory" transaction-type="RESOURCE_LOCAL"> 
+    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+    <class>com.haulmont.cuba.core.entity.BaseGenericIdEntity</class>
+    <class>com.haulmont.cuba.core.entity.BaseUuidEntity</class>
+    <class>com.haulmont.cuba.core.entity.BaseLongIdEntity</class>
+    <class>com.haulmont.cuba.core.entity.BaseIntegerIdEntity</class>
+    <class>com.haulmont.cuba.core.entity.BaseStringIdEntity</class>
+    <class>com.haulmont.cuba.core.entity.StandardEntity</class>
+    <class>com.haulmont.cuba.core.entity.Server</class>
+    <class>com.haulmont.cuba.core.entity.Config</class>
+    <class>com.haulmont.cuba.core.entity.FileDescriptor</class>
+    <class>com.haulmont.cuba.core.entity.LockDescriptor</class>
+    <class>com.haulmont.cuba.core.entity.Folder</class>
+    <class>com.haulmont.cuba.core.entity.AbstractSearchFolder</class>
+    <class>com.haulmont.cuba.core.entity.AppFolder</class>
+    <class>com.haulmont.cuba.core.entity.FtsQueue</class>
+    <class>com.haulmont.cuba.core.entity.EntityStatistics</class>
+    <class>com.haulmont.cuba.core.entity.SendingMessage</class>
+    <class>com.haulmont.cuba.core.entity.SendingAttachment</class>
+    <class>com.haulmont.cuba.core.entity.EntitySnapshot</class>
+    <class>com.haulmont.cuba.core.entity.ScheduledTask</class>
+    <class>com.haulmont.cuba.core.entity.ScheduledExecution</class>
+    <class>com.haulmont.cuba.core.entity.QueryResult</class>
+    <class>com.haulmont.cuba.core.entity.EmbeddableEntity</class>
+    <class>com.haulmont.cuba.security.entity.User</class>
+    <class>com.haulmont.cuba.security.entity.Role</class>
+    <class>com.haulmont.cuba.security.entity.UserRole</class>
+    <class>com.haulmont.cuba.security.entity.Group</class>
+    <class>com.haulmont.cuba.security.entity.GroupHierarchy</class>
+    <class>com.haulmont.cuba.security.entity.Permission</class>
+    <class>com.haulmont.cuba.security.entity.Constraint</class>
+    <class>com.haulmont.cuba.security.entity.SessionAttribute</class>
+    <class>com.haulmont.cuba.security.entity.UserSetting</class>
+    <class>com.haulmont.cuba.security.entity.UserSubstitution</class>
+    <class>com.haulmont.cuba.security.entity.LoggedEntity</class>
+    <class>com.haulmont.cuba.security.entity.LoggedAttribute</class>
+    <class>com.haulmont.cuba.security.entity.EntityLogItem</class>
+    <class>com.haulmont.cuba.security.entity.FilterEntity</class>
+    <class>com.haulmont.cuba.security.entity.SearchFolder</class>
+    <class>com.haulmont.cuba.security.entity.Presentation</class>
+    <class>com.haulmont.cuba.security.entity.ScreenHistoryEntity</class>
+    <class>com.haulmont.cuba.core.entity.CategorizedEntity</class>
+    <class>com.haulmont.cuba.core.entity.Category</class>
+    <class>com.haulmont.cuba.core.entity.CategoryAttribute</class>
+    <class>com.haulmont.cuba.core.entity.CategoryAttributeValue</class>
+    <class>com.haulmont.cuba.core.entity.JmxInstance</class>
+    <class>com.haulmont.cuba.security.entity.RememberMeToken</class>
+    <class>com.haulmont.workflow.core.entity.Proc</class>
+    <class>com.haulmont.workflow.core.entity.Design</class>
+    <class>com.haulmont.workflow.core.entity.DesignScript</class>
+    <class>com.haulmont.workflow.core.entity.DesignFile</class>
+    <class>com.haulmont.workflow.core.entity.ProcRole</class>
+    <class>com.haulmont.workflow.core.entity.Card</class>
+    <class>com.haulmont.workflow.core.entity.CardRelation</class>
+    <class>com.haulmont.workflow.core.entity.CardProc</class>
+    <class>com.haulmont.workflow.core.entity.CardRole</class>
+    <class>com.haulmont.workflow.core.entity.Assignment</class>
+    <class>com.haulmont.workflow.core.entity.Attachment</class>
+    <class>com.haulmont.workflow.core.entity.CardAttachment</class>
+    <class>com.haulmont.workflow.core.entity.AssignmentAttachment</class>
+    <class>com.haulmont.workflow.core.entity.DefaultProcActor</class>
+    <class>com.haulmont.workflow.core.entity.TimerEntity</class>
+    <class>com.haulmont.workflow.core.entity.WorkCalendarEntity</class>
+    <class>com.haulmont.workflow.core.entity.CardInfo</class>
+    <class>com.haulmont.workflow.core.entity.UserGroup</class>
+    <class>com.haulmont.workflow.core.entity.AttachmentType</class>
+    <class>com.haulmont.workflow.core.entity.CardComment</class>
+    <class>com.haulmont.workflow.core.entity.ProcAppFolder</class>
+    <class>com.haulmont.workflow.core.entity.ProcState</class>
+    <class>com.haulmont.workflow.core.entity.ProcFamily</class>
+    <class>com.haulmont.workflow.core.entity.SendingSms</class>
+    <class>com.haulmont.workflow.core.entity.UserNotifiedBySms</class>
+    <class>com.haulmont.workflow.core.entity.AbstractProcessVariable</class>
+    <class>com.haulmont.workflow.core.entity.DesignProcessVariable</class>
+    <class>com.haulmont.workflow.core.entity.ProcVariable</class>
+    <class>com.haulmont.workflow.core.entity.CardVariable</class>
+    <class>com.haulmont.thesis.core.entity.TsCard</class>
+    <class>com.haulmont.thesis.core.entity.CardAcl</class>
+    <class>com.haulmont.thesis.core.entity.AbstractTask</class>
+    <class>com.haulmont.thesis.core.entity.Task</class>
+    <class>com.haulmont.thesis.core.entity.TaskType</class>
+    <class>com.haulmont.thesis.core.entity.Priority</class>
+    <class>com.haulmont.thesis.core.entity.TaskGroup</class>
+    <class>com.haulmont.thesis.core.entity.TaskPattern</class>
+    <class>com.haulmont.thesis.core.entity.TaskPatternGroup</class>
+    <class>com.haulmont.thesis.core.entity.TaskVersion</class>
+    <class>com.haulmont.thesis.core.entity.TaskInfo</class>
+    <class>com.haulmont.thesis.core.entity.ProjectGroup</class>
+    <class>com.haulmont.thesis.core.entity.Project</class>
+    <class>com.haulmont.thesis.core.entity.TsUser</class>
+    <class>com.haulmont.thesis.core.entity.TsUserSubstitution</class>
+    <class>com.haulmont.thesis.core.entity.TsUserGroup</class>
+    <class>com.haulmont.thesis.core.entity.TaskGroupTask</class>
+    <class>com.haulmont.thesis.core.entity.TaskGroupAttachment</class>
+    <class>com.haulmont.thesis.core.entity.Reminder</class>
+    <class>com.haulmont.thesis.core.entity.schedule.ScheduleTask</class>
+    <class>com.haulmont.thesis.core.entity.schedule.ScheduleAction</class>
+    <class>com.haulmont.thesis.core.entity.schedule.ScheduleActionType</class>
+    <class>com.haulmont.thesis.core.entity.schedule.ScheduleTrigger</class>
+    <class>com.haulmont.thesis.core.entity.StartTaskScheduleAction</class>
+    <class>com.haulmont.thesis.core.entity.schedule.ScheduleActionLog</class>
+    <class>com.haulmont.thesis.core.entity.CardUserInfo</class>
+    <class>com.haulmont.thesis.core.entity.MppResourceUser</class>
+    <class>com.haulmont.thesis.core.entity.Doc</class>
+    <class>com.haulmont.thesis.core.entity.DocExtraField</class>
+    <class>com.haulmont.thesis.core.entity.SimpleDoc</class>
+    <class>com.haulmont.thesis.core.entity.Contract</class>
+    <class>com.haulmont.thesis.core.entity.DocType</class>
+    <class>com.haulmont.thesis.core.entity.DocKind</class>
+    <class>com.haulmont.thesis.core.entity.Numerator</class>
+    <class>com.haulmont.thesis.core.entity.DocCategory</class>
+    <class>com.haulmont.thesis.core.entity.Organization</class>
+    <class>com.haulmont.thesis.core.entity.Contractor</class>
+    <class>com.haulmont.thesis.core.entity.Company</class>
+    <class>com.haulmont.thesis.core.entity.Individual</class>
+    <class>com.haulmont.thesis.core.entity.ContactPerson</class>
+    <class>com.haulmont.thesis.core.entity.Bank</class>
+    <class>com.haulmont.thesis.core.entity.BankRegion</class>
+    <class>com.haulmont.thesis.core.entity.Account</class>
+    <class>com.haulmont.thesis.core.entity.OrganizationAccount</class>
+    <class>com.haulmont.thesis.core.entity.ContractorAccount</class>
+    <class>com.haulmont.thesis.core.entity.Currency</class>
+    <class>com.haulmont.thesis.core.entity.Department</class>
+    <class>com.haulmont.thesis.core.entity.Employee</class>
+    <class>com.haulmont.thesis.core.entity.OrganizationAttachment</class>
+    <class>com.haulmont.thesis.core.entity.CorrespondentAttachment</class>
+    <class>com.haulmont.thesis.core.entity.Correspondent</class>
+    <class>com.haulmont.thesis.core.entity.DocReceivingMethod</class>
+    <class>com.haulmont.thesis.core.entity.OfficeFileNomenclature</class>
+    <class>com.haulmont.thesis.core.entity.OfficeFile</class>
+    <class>com.haulmont.thesis.core.entity.DocOfficeData</class>
+    <class>com.haulmont.thesis.core.entity.DocOfficeDataAddressee</class>
+    <class>com.haulmont.thesis.core.entity.DocTransferLog</class>
+    <class>com.haulmont.thesis.core.entity.TypicalResolution</class>
+    <class>com.haulmont.thesis.core.entity.DepartmentMembership</class>
+    <class>com.haulmont.thesis.core.entity.Position</class>
+    <class>com.haulmont.thesis.core.entity.ShortUrl</class>
+    <class>com.haulmont.thesis.core.entity.ImportDataType</class>
+    <class>com.haulmont.thesis.core.entity.ImportDataAttr</class>
+    <class>com.haulmont.thesis.core.entity.ImportEntityInfo</class>
+    <class>com.haulmont.thesis.core.entity.EmployeeDepartmentPositionRelation</class>
+    <class>com.haulmont.thesis.core.entity.OfficeFileNomenclatureRelation</class>
+    <class>com.haulmont.thesis.core.entity.LazyLoadAttachment</class>
+    <class>com.haulmont.thesis.core.entity.appintegration.AppIntegrationLog</class>
+    <class>com.haulmont.thesis.core.entity.appintegration.AppIntegrationLinkEntity</class>
+    <class>com.haulmont.thesis.core.entity.ResolutionWaitingComplete</class>
+    <class>com.haulmont.thesis.core.entity.ThesisCardAttachment</class>
+    <class>com.haulmont.thesis.core.entity.TsCardRole</class>
+    <class>com.haulmont.thesis.core.entity.ReservationNumber</class>
+    <class>com.haulmont.thesis.core.entity.SubCardInfo</class>
+    <class>com.haulmont.thesis.core.entity.RemoteCardState</class>
+    <class>com.haulmont.thesis.core.entity.OfficeFileTransferLog</class>
+    <class>com.haulmont.thesis.core.entity.TsProc</class>
+    <class>com.haulmont.thesis.core.entity.MeetingDoc</class>
+    <class>com.haulmont.thesis.core.entity.MeetingQuestion</class>
+    <class>com.haulmont.thesis.core.entity.Solution</class>
+    <class>com.haulmont.thesis.core.entity.MeetingParticipant</class>
+    <class>com.haulmont.reports.entity.BaseReportEntity</class>
+    <class>com.haulmont.reports.entity.ReportTemplate</class>
+    <class>com.haulmont.reports.entity.Report</class>
+    <class>com.haulmont.reports.entity.ReportGroup</class>
+    <class>com.company.tezisdirectory.entity.CostArticle</class>
+    <class>com.company.tezisdirectory.entity.ExtSimpleDoc</class>
+    <properties>
+      <property name="openjpa.jdbc.QuerySQLCache" value="false"/>
+      <property name="openjpa.MetaDataRepository" value="Preload=false"/>
+      <property name="openjpa.jdbc.SubclassFetchMode" value="none"/>
+      <property name="openjpa.jdbc.DBDictionary" value="com.haulmont.cuba.core.sys.persistence.CubaPostgresDictionary(RequiresCastForComparisons=true)"/>
+      <property name="openjpa.IgnoreChanges" value="true"/>
+      <property name="openjpa.jdbc.MappingDefaults" value="FieldStrategies='java.util.UUID=com.haulmont.cuba.core.sys.persistence.UuidPostgresValueHandler'"/>
+      <property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/>
+      <property name="openjpa.ConnectionFactoryProperties" value="PrettyPrint=true, PrettyPrintLineLength=72, PrintParameters=true"/>
+      <property name="openjpa.Compatibility" value="SuperclassDiscriminatorStrategyByDefault=false,QuotedNumbersInQueries=true"/>
+      <property name="openjpa.Log" value="log4j"/>
+      <property name="openjpa.DetachState" value="loaded(DetachedStateField=true, DetachedStateManager=true)"/>
+      <property name="openjpa.MetaDataFactory" value="jpa(URLs=file:///C:/Users/user/studio-projects/tezis_Directory/deploy/tomcat/work/app-core/orm.xml)"/>
+    </properties>
+  </persistence-unit> 
+</persistence>

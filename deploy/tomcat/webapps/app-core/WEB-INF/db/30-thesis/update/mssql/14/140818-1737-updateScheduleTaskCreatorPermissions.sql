@@ -1,0 +1,1 @@
+exec create_or_update_sec_permission @r_name='schedule_task_creator', @p_target='tm$TaskPattern.browse', @p_type=10, @p_value=1;

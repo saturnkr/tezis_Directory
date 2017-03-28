@@ -1,0 +1,4 @@
+-- $Id: 141205-1552-addScreenHistoryIndex.sql 18239 2014-12-05 12:13:23Z kozyaikin $
+-- Description:
+
+create INDEX IDX_SEC_SCREEN_HISTORY_CREATE_TS_USER_ID ON SEC_SCREEN_HISTORY (CREATE_TS, USER_ID)^

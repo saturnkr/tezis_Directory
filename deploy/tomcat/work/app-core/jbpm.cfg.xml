@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2008-2013 Haulmont. All rights reserved.
+  ~ Use is subject to license terms, see http://www.cuba-platform.com/license for details.
+  -->
+<jbpm-configuration> 
+  <process-engine-context> 
+    <repository-service/>  
+    <repository-cache/>  
+    <execution-service/>  
+    <!--<history-service/>-->  
+    <command-service> 
+      <environment-interceptor/> 
+    </command-service>  
+    <command-service name="newTxRequiredCommandService"> 
+      <environment-interceptor policy="requiresNew"/>  
+      <spring-transaction-interceptor/> 
+    </command-service>  
+    <command-service name="txRequiredCommandService"> 
+      <environment-interceptor/> 
+    </command-service>  
+    <hibernate-session-factory/>  
+    <object class="com.haulmont.workflow.core.sys.CubaJbpmDbidGenerator"/>  
+    <object class="org.jbpm.pvm.internal.id.DatabaseIdComposer" init="eager"/>  
+    <object class="org.jbpm.pvm.internal.el.JbpmElFactoryImpl"> 
+      <field name="functionClassMap"> 
+        <map> 
+          <entry> 
+            <key> 
+              <string value=""/> 
+            </key>  
+            <value> 
+              <class class-name="org.jbpm.pvm.internal.el.JstlFunction"/> 
+            </value> 
+          </entry>  
+          <entry> 
+            <key> 
+              <string value="wf"/> 
+            </key>  
+            <value> 
+              <class class-name="com.haulmont.workflow.core.app.WfOperations"/> 
+            </value> 
+          </entry> 
+        </map> 
+      </field> 
+    </object>  
+    <script-manager default-expression-language="juel" default-script-language="juel"> 
+      <script-language name="juel" factory="org.jbpm.pvm.internal.script.JuelScriptEngineFactory"/> 
+    </script-manager>  
+    <types resource="jbpm.variable.types.xml"/>  
+    <deployer-manager> 
+      <jpdl-deployer/> 
+    </deployer-manager>  
+    <hibernate-configuration>
+      <cfg file="C:\Users\user\studio-projects\tezis_Directory\deploy\tomcat\work\app-core\jbpm.hibernate.cfg.xml"/>
+    </hibernate-configuration>
+  </process-engine-context>  
+  <transaction-context> 
+    <transaction type="spring"/>  
+    <hibernate-session current="true"/>  
+    <repository-session/>  
+    <db-session/> 
+  </transaction-context> 
+</jbpm-configuration>

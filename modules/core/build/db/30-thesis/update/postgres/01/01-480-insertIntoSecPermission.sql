@@ -1,0 +1,5 @@
+-- $Id: 01-480-insertIntoSecPermission.sql 835 2010-10-11 06:37:29Z novikov $
+-- Description:
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,type,target,value,role_id) VALUES ('e21cae80-bd55-40eb-9dac-0a144b691df2','2010-02-12 14:30:21.0','admin',1,'2010-02-12 14:30:21.0',null,null,null,20,'tm$TaskPattern:update',1,'f7ff1ec7-802d-4a42-a7db-1a97e17f893f');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,type,target,value,role_id) VALUES ('987656e2-6f1b-4b3b-bad0-7bae40e95185','2010-02-12 14:30:21.0','admin',1,'2010-02-12 14:30:21.0',null,null,null,20,'tm$TaskPattern:create',1,'f7ff1ec7-802d-4a42-a7db-1a97e17f893f');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,type,target,value,role_id) VALUES ('822ab006-db10-428d-b264-2cb9a623d8c6','2010-02-12 14:30:21.0','admin',1,'2010-02-12 14:30:21.0',null,null,null,20,'tm$TaskPattern:delete',1,'f7ff1ec7-802d-4a42-a7db-1a97e17f893f');

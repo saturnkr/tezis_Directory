@@ -1,0 +1,614 @@
+
+/*
+ * Basic layout
+ */
+
+html {
+    margin: 0;
+}
+
+body {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+    padding: 0;
+    background-color: white;
+    line-height: 150%;
+	font-size: 12pt;
+	overflow-x: hidden;
+}
+
+body, td, div {
+    font-family: 'Arial', 'Verdana', sans-serif;
+    font-size: 12pt;
+    color: #000000;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: blue;
+}
+
+p {
+   /* ensure paragraphs remain close to their parent heading */
+   margin-top: 0;
+   margin-bottom: 1em;
+   text-align: justify;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #0b6ec7;
+    line-height: 150%;
+    font-weight: bold;
+    font-family: 'Arial', 'Verdana', sans-serif;
+    /* ensure paragraphs remain close to their parent heading */
+    margin-bottom: 0.2em;
+}
+
+h1 {
+	font-size: 40pt;
+}
+
+h2 {
+	font-size: 18pt;
+}
+
+h3 {
+	font-size: 16pt;
+}
+
+h4 {
+	font-size: 14pt;
+}
+
+h5 {
+	font-size: 12pt;
+}
+
+code, pre {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+    color: inherit;
+}
+
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited {
+    color: inherit;
+}
+/**
+ * TITLEPAGE
+ */
+
+.book > .titlepage {
+    margin-top: 2.2em;
+    margin-bottom: 2em;
+}
+
+.book .titlepage div.title {
+    border: solid #d0d0d0 1px;
+    background-color: #f5f5f5;
+    margin-left: -1.8em;
+    margin-right: -1.8em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    margin-bottom: 2.2em;
+}
+
+.titlepage h1.title {
+    font-size: 40pt;
+    margin-bottom: 0;
+    color: #0b6ec7;
+	text-align: center; 
+}
+
+.titlepage h2.subtitle {
+    font-size: 24pt;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #0b6ec7;
+	text-align: center; 
+}
+
+.titlepage .releaseinfo {
+    color: #666666;
+    font-size: 120%;
+    margin-top: 2em;
+    margin-bottom: 2.6em;
+}
+
+.titlepage .author {
+    color: #666666;
+}
+
+.titlepage .copyright {
+    color: #a2a2a2;
+    font-size: 90%;
+}
+
+.titlepage .legalnotice {
+    color: #a2a2a2;
+    font-size: 90%;
+}
+
+
+/*Headings and titles*/
+
+.heading {
+    font-family: 'Arial', 'Verdana', sans-serif;
+}
+
+.toc p{
+    /*font-size: 180%;*/
+	font-size: 18pt;
+	color: #0b6ec7;
+}
+
+.chapter > .titlepage h1 {
+	font-size: 16pt;
+}
+
+.chapter > .titlepage h2 {
+	font-size: 18pt;
+}
+
+.preface > .titlepage h1 {
+	font-size: 16pt;
+}
+
+.preface > .titlepage h2 {
+	font-size: 18pt;
+}
+
+.chapter > .titlepage {
+    margin-bottom: 4em;
+}
+
+.appendix > .titlepage h1 {
+	font-size: 16pt;
+}
+
+.appendix > .titlepage h2 {
+	font-size: 18pt;
+}
+
+.section > .titlepage h2 {
+	font-size: 16pt;
+}
+
+.section > .titlepage h3 {
+	font-size: 14pt;
+}
+
+.section > .titlepage h4 {
+	font-size: 12pt;
+}
+
+.appendix > .titlepage {
+    margin-bottom: 4em;
+}
+
+/*
+ * Docbook content
+ */
+
+.chapter h1 {
+    margin-bottom: 1.0em;
+}
+
+.appendix h1 {
+    margin-bottom: 1.0em;
+}
+
+
+/*
+ * Lists
+ */
+
+.variablelist dt {
+    font-weight: bold;
+}
+
+.variablelist dt a {
+    font-weight: normal;
+}
+
+/*
+ * Examples, Figures
+ */
+
+pre {
+    background-color: #f5f5f5;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    line-height: 120%;
+}
+
+.screen {
+    border-left: solid #d4e3fa 0.5em;
+    /*overflow-x: auto;*/
+}
+
+.example, .figure {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.example .title, .figure .title {
+    white-space: nowrap;
+    text-align:center;
+    margin-top: 0;
+    margin-bottom: 0.6em;
+	font-family: 'Arial', 'Verdana', sans-serif;
+	font-size: 10pt;
+    color: #000000;
+}
+
+.example pre, .figure pre {
+    margin: 0;
+    margin-bottom: 0.6em;
+}
+
+.example-contents > p {
+    display: block;
+    margin: 0;
+    margin-bottom: 0.2em;
+}
+
+.example-break, .figure-break {
+    display: none
+}
+
+.exampleLocation {
+    margin-top: 0.5em;
+    padding-left: 1.7em;
+    background: #FEFEDD;
+    color: #777744;
+}
+
+.exampleLocation p {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+.exampleLocation .emphasis em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cmdsynopsis {
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 2em;
+}
+
+.prompt {
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 1em;
+}
+
+.mediaobject {
+    align: center; 
+	/*padding-bottom: 1em;
+	padding-top: 1em;*/
+}
+
+/*
+ * Tables
+ */
+
+.informaltable table {
+    border-collapse: collapse;
+    font-size: 11pt;
+    min-width: 50%;
+    /*border: solid #2250bd 1px;*/
+	border: solid rgb(0,149,182) 1px;
+	page-break-inside: auto;
+}
+
+.informaltable table td {
+    text-align: center;
+    vertical-align: text-top;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+	font-size: 11pt;
+}
+
+.informaltable table thead td {
+    font-weight: bold;
+	font-size: 11pt;
+    /*border-bottom: solid #686868 2px;*/
+    background-color: #ffffff;
+}
+
+th.caption { background-color: rgb(11,110,199); 
+            color: #ffffff;} 
+			
+th.bord { border-right: solid #ffffff 1px;
+         background-color: rgb(11,110,199); 
+         color: #ffffff;} 
+		 
+td.special { background-color: rgb(157,197,232); 
+            border-bottom: solid #686868 2px;
+			border-top: solid #686868 2px;} 
+			
+td.left { background-color: rgb(157,197,232); 
+            border-left: solid #686868 2px;
+			border-bottom: solid #686868 2px;
+			border-top: solid #686868 2px;} 
+			
+td.right { background-color: rgb(157,197,232); 
+            border-right: solid #686868 2px;
+			border-bottom: solid #686868 2px;
+			border-top: solid #686868 2px;} 
+			
+div.table  {
+   text-align: center;
+}
+
+div.informaltable {
+  text-align: center
+}
+
+.table {
+    margin-top: 0;
+    margin-bottom: 1.8em;
+}
+
+.table .title {
+    white-space: nowrap;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.6em;
+	font-family: 'Arial', 'Verdana', sans-serif;
+	font-size: 10pt;
+    color: #000000;
+}
+
+/*
+ * Footnotes, notes, tips
+ */
+
+.footnote sup {
+    vertical-align: baseline;
+    font-size: 100%;
+}
+
+.note, .tip, .warning, .caution, .important{
+    padding-top: 1em;
+    padding-bottom: 0;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    margin-bottom: 1em;
+	margin-left: 2em;
+	width: 85%;
+	margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.programlisting {
+    border-left: solid #d4e3fa 0.5em;
+	width: 85%;
+	margin-left: 2em;
+	padding-left: 1.2em;
+    /*overflow-x: auto;*/
+}
+
+.note {
+    background: #ebf4f7;
+    border: solid #c3d9e6 1px;
+}
+
+.note .title {
+    color: #5283a1;
+	font-size: 100%;
+}
+
+.tip {
+    background: #FAF7F5;
+    border: solid #e2d2c9 1px;    
+}
+.tip .title {
+    color: #80614D;
+	font-size: 100%;
+}
+
+.important {
+    background: #F0F8FF;
+    border: solid #4682B4 1.5px;
+}
+.important .title {
+    color: #191970;
+	font-size: 100%;
+}
+
+.warning {
+    background: #f8e8e8;
+    border: solid #e59595 1.5px;
+}
+.warning .title {
+    color: #cc6666;
+	font-size: 100%;
+}
+
+.caution {
+    background: #ecf2ff;
+    border: solid #4c72bf 1px;
+}
+.caution .title {
+    color: #6699ff;
+	font-size: 100%;
+}
+
+.tip .figure .title, .warning .figure .title, .caution .figure .title, .important .figure .title {
+    color: #000000;
+	font-size: 10pt;
+}
+
+/* Remove top margins on headings inside notes and tips */
+.tip h1, .note h1
+.tip h2, .note h2,
+.tip h3, .note h3,
+.tip h4, .note h4,
+.tip h5, .note h5,
+.tip h6, .note h6
+{
+   margin-top: 0;
+}
+
+/* Remove top margins on headings inside notes and tips */
+.caution h1, .warning h1, .important h1
+.caution h2, .warning h2, .important h2,
+.caution h3, .warning h3, .important h3,
+.caution h4, .warning h4, .important h4,
+.caution h5, .warning h5, .important h5,
+.caution h6, .warning h6, .important h6
+{
+   margin-top: 0;
+}
+
+/**
+ * Inline content
+ */
+.userinput{
+    white-space: nowrap;
+}
+
+.literal{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.guimenu, .guimenuitem, .guisubmenu,
+.guilabel {
+	font-weight: bold;
+}
+
+.guibutton {
+	background-color: #e7e7e7;
+	padding: 2px;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	border-radius: 4px;
+	border-color: #adadad;
+}
+
+.application, .orgname, .productname{
+	font-weight: bold;
+}
+
+.authorinitials, .firstterm, .property  {
+	font-style: italic;
+}
+
+.classname,.methodname,.interfacename,.errortext,.type, .varname, .envar {
+	font-family:  'Courier New', Courier, monospace;
+}
+
+.database {
+	font-weight: bold;
+}
+
+.errorname {
+	font-family: 'Courier New', Courier, monospace;
+	font-style: italic;
+}
+
+/*
+ * Code highlighting
+ */
+.hl-string, .hl-number, .hl-value { color: #336699; }
+
+.hl-keyword { font-weight: bold; }
+
+.hl-comment, .hl-doccomment { color: #929292; }
+
+.hl-annotation { color: #777744; }
+
+/***********************************************************/
+
+/*
+ * Table of Contents
+ */
+
+.toc dl, .list-of-examples dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.book .toc > dl > dt {
+    margin-top: 0.6em;
+}
+
+.book .toc, .book .list-of-examples {
+    margin-top: 2em;
+}
+.table { 
+     width: 600px; 
+	 min-width: 50%;  
+     margin: auto;
+	 page-break-inside: auto; 
+}
+td.blue{
+    background: #123B86;
+	color: #fffacd;
+}
+td.blue2{
+    background: #BACFF6;
+}
+/*
+ * Single page html
+ */
+.book .chapter {
+    margin-top: 4em;
+}
+
+/*
+ * text color
+ */
+span.red{
+         color: red;
+		 font-weight: bold;} 
+
+span.gray{
+         color: gray;
+		 font-weight: bold;} 
+		 
+span.orange{
+         color: orange;
+		 font-weight: bold;} 
+span.blue{
+         color: blue;
+		 font-weight: bold;} 	
+span.green{
+         color: green;
+		 font-weight: bold;} 
+/* underline */		 
+span.underline{
+         text-decoration: underline;} 
+
+/* indent */		 
+p.indent{
+        text-indent: 5em;
+}
+p.indent2{
+        text-indent: 5em;
+}
+
+/*убираем подчеркивание у перекресных ссылок*/
+.xref {
+  text-decoration: none;
+  color: #000000;
+}

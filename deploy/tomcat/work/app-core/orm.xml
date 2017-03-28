@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+  <entity class="com.haulmont.cuba.core.entity.EntitySnapshot" name="sys$EntitySnapshot">
+    <attributes>
+      <many-to-one name="author" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="AUTHOR_ID" nullable="false"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.User" name="sec$User">
+    <attributes>
+      <one-to-many name="substitutions" target-entity="com.haulmont.thesis.core.entity.TsUserSubstitution" fetch="LAZY" mapped-by="user">
+        <order-by>createTs</order-by>
+      </one-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.UserRole" name="sec$UserRole">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.UserSetting" name="sec$UserSetting">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.UserSubstitution" name="sec$UserSubstitution">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+      <many-to-one name="substitutedUser" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.EntityLogItem" name="sec$EntityLog">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.FilterEntity" name="sec$Filter">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.SearchFolder" name="sec$SearchFolder">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.Presentation" name="sec$Presentation">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.ScreenHistoryEntity" name="sec$ScreenHistory">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+      <many-to-one name="substitutedUser" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.cuba.security.entity.RememberMeToken" name="sec$RememberMeToken">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID" nullable="false"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.ProcRole" name="wf$ProcRole">
+    <attributes>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.Card" name="wf$Card">
+    <attributes>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+      <many-to-one name="creator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CREATOR_ID"/>
+      </many-to-one>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+      <one-to-many name="roles" target-entity="com.haulmont.thesis.core.entity.TsCardRole" fetch="LAZY" mapped-by="card">
+        <order-by>code, sortOrder</order-by>
+      </one-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.CardProc" name="wf$CardProc">
+    <attributes>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.CardRole" name="wf$CardRole">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.Assignment" name="wf$Assignment">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+      <many-to-one name="finishedByUser" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="FINISHED_BY"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.Attachment" name="wf$Attachment">
+    <attributes>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.DefaultProcActor" name="wf$DefaultProcActor">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.CardInfo" name="wf$CardInfo">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.UserGroup" name="wf$UserGroup">
+    <attributes>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+      <many-to-many name="users" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-table name="WF_USER_GROUP_USER">
+          <join-column name="USER_GROUP_ID"/>
+          <inverse-join-column name="USER_ID"/>
+        </join-table>
+      </many-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.CardComment" name="wf$CardComment">
+    <attributes>
+      <many-to-one name="sender" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+      <many-to-one name="substitutedSender" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_USER_ID"/>
+      </many-to-one>
+      <many-to-many name="addressees" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-table name="WF_CARD_COMMENT_USER">
+          <join-column name="CARD_COMMENT_ID" referenced-column-name="ID"/>
+          <inverse-join-column name="USER_ID" referenced-column-name="ID"/>
+        </join-table>
+      </many-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.ProcState" name="wf$ProcState">
+    <attributes>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.UserNotifiedBySms" name="wf$UserNotifiedBySms">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.workflow.core.entity.ProcVariable" name="wf$ProcVariable">
+    <attributes>
+      <many-to-one name="proc" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-column name="PROC_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.CardAcl" name="ts$CardAcl">
+    <attributes>
+      <many-to-one name="cardRole" target-entity="com.haulmont.thesis.core.entity.TsCardRole" fetch="LAZY">
+        <join-column name="CARD_ROLE_ID"/>
+      </many-to-one>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.Task" name="tm$Task">
+    <attributes>
+      <many-to-one name="executor" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="EXECUTOR_ID"/>
+      </many-to-one>
+      <many-to-one name="initiator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="INITIATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.TaskGroup" name="tm$TaskGroup">
+    <attributes>
+      <many-to-one name="chairman" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CHAIRMAN_ID"/>
+      </many-to-one>
+      <many-to-one name="secretary" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SECRETARY_ID"/>
+      </many-to-one>
+      <many-to-one name="initiator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="INITIATOR_ID"/>
+      </many-to-one>
+      <many-to-one name="subCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+      <many-to-many name="participants" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-table name="TM_TASK_GROUP_USER">
+          <join-column name="TASK_GROUP_ID" referenced-column-name="ID"/>
+          <inverse-join-column name="USER_ID" referenced-column-name="ID"/>
+        </join-table>
+      </many-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.TaskInfo" name="tm$TaskInfo">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.TaskGroupTask" name="tm$TaskGroupTask">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+      <many-to-one name="controller" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CONTROLLER_ID"/>
+      </many-to-one>
+      <many-to-one name="initiator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="INITIATOR_ID"/>
+      </many-to-one>
+      <many-to-one name="observer" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="OBSERVER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.Reminder" name="tm$Reminder">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.schedule.ScheduleTask" name="tm$ScheduleTask">
+    <attributes>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.CardUserInfo" name="wf$CardUserInfo">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.MppResourceUser" name="tm$MppResourceUser">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.DocKind" name="df$DocKind">
+    <attributes>
+      <many-to-many name="procs" target-entity="com.haulmont.thesis.core.entity.TsProc" fetch="LAZY">
+        <join-table name="DF_DOC_KIND_WF_PROC">
+          <join-column name="CATEGORY_ID" referenced-column-name="CATEGORY_ID"/>
+          <inverse-join-column name="PROC_ID" referenced-column-name="ID"/>
+        </join-table>
+      </many-to-many>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.Organization" name="df$Organization">
+    <attributes>
+      <many-to-one name="secretary" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SECRETARY_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.Employee" name="df$Employee">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.OfficeFileNomenclature" name="df$OfficeFileNomenclature">
+    <attributes>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.OfficeFile" name="df$OfficeFile">
+    <attributes>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.TypicalResolution" name="df$TypicalResolution">
+    <attributes>
+      <many-to-one name="creator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CREATOR_ID"/>
+      </many-to-one>
+      <many-to-one name="substitutedCreator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SUBSTITUTED_CREATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.OfficeFileTransferLog" name="ts$OfficeFileTransferLog">
+    <attributes>
+      <many-to-one name="issuedBy" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="ISSUED_BY"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.MeetingDoc" name="df$MeetingDoc">
+    <attributes>
+      <many-to-one name="chairman" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CHAIRMAN_ID"/>
+      </many-to-one>
+      <many-to-one name="secretary" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="SECRETARY_ID"/>
+      </many-to-one>
+      <many-to-one name="initiator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="INITIATOR_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.Solution" name="df$Solution">
+    <attributes>
+      <many-to-one name="executor" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="EXECUTOR_ID"/>
+      </many-to-one>
+      <many-to-one name="initiator" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="INITIATOR_ID"/>
+      </many-to-one>
+      <many-to-one name="controller" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="CONTROLLER_ID"/>
+      </many-to-one>
+      <many-to-one name="observer" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="OBSERVER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+  <entity class="com.haulmont.thesis.core.entity.MeetingParticipant" name="df$MeetingParticipant">
+    <attributes>
+      <many-to-one name="user" target-entity="com.haulmont.thesis.core.entity.TsUser" fetch="LAZY">
+        <join-column name="USER_ID"/>
+      </many-to-one>
+    </attributes>
+  </entity>
+</entity-mappings>

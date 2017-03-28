@@ -1,0 +1,11 @@
+-- $Id: 150508-1430-addMeetingDocSecRole.sql 20197 2015-05-27 10:16:49Z kozyaikin $
+-- Description:
+insert into SEC_ROLE (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,name,loc_name,description,is_default_role) VALUES ('80145594-f020-e85c-d259-7a293c035495',current_timestamp,'admin',1,current_timestamp,null,null,null,'meetingdoc_creator','Работа с совещаниями','Роль, предоставляющая права для работы с совещаниями',null);
+^
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:create',1,'80145594-f020-e85c-d259-7a293c035495');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:update',1,'80145594-f020-e85c-d259-7a293c035495');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:delete',1,'80145594-f020-e85c-d259-7a293c035495');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:create',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:update',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+INSERT INTO sec_permission (id,create_ts,created_by,version,update_ts,updated_by,delete_ts,deleted_by,PERMISSION_TYPE,target,value,role_id) VALUES (newid(),{ts '2010-04-22 16:00:04.550'},'admin',1,{ts '2010-04-22 16:00:04.550'},null,null,null,20,'df$MeetingDoc:delete',0,'96fa7fe9-397d-4bac-b14a-eec2d94de68c');
+

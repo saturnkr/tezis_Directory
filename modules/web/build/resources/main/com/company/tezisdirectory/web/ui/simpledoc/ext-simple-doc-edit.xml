@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.tezisdirectory.web.ui.simpledoc.ExtSimpleDocEditor"
+        extends="com/haulmont/thesis/web/ui/simpledoc/simple-doc-edit.xml"
+        messagesPack="com.company.tezisdirectory.web.ui.simpledoc">
+    <dsContext>
+        <datasource id="cardDs"
+                    class="com.company.tezisdirectory.entity.ExtSimpleDoc"
+                    view="ext-edit"/>
+    </dsContext>
+    <layout>
+        <split id="split">
+            <hbox id="mainPane">
+                <tabSheet id="tabsheet">
+                    <tab id="mainTab">
+                        <groupBox id="docInfoGroupBox">
+                            <scrollBox id="infoScrollBox">
+                                <vbox id="infoVBox">
+                                    <grid id="docInfo">
+                                        <rows>
+                                            <row>
+                                                <label id="costartLabel"
+                                                       value="msg://com.company.tezisdirectory.entity/ExtSimpleDoc.costart"/>
+                                                <pickerField id="costart"
+                                                             datasource="cardDs"
+                                                             property="costart"
+                                                             width="250px"/>
+                                            </row>
+                                        </rows>
+                                    </grid>
+                                </vbox>
+                            </scrollBox>
+                        </groupBox>
+                    </tab>
+                </tabSheet>
+            </hbox>
+        </split>
+    </layout>
+</window>

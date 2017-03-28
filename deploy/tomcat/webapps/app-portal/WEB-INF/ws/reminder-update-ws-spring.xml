@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2015 Haulmont Technology Ltd. All Rights Reserved.
+  ~ Haulmont Technology proprietary and confidential.
+  ~ Use is subject to license terms.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean class="com.haulmont.cuba.core.sys.CubaPropertyPlaceholderConfigurer"/>
+
+    <bean id="encryptService" class="com.haulmont.thesis.portal.ws.EncryptWebServiceBean"/>
+
+    <bean id="loginService" class="com.haulmont.thesis.portal.ws.LoginWebServiceBean">
+        <property name="encryptService" ref="encryptService"/>
+    </bean>
+
+    <import resource="reminderUpdate/reminder-ws-spring.xml"/>
+
+</beans>
